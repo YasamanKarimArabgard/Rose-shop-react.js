@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,17 +5,18 @@ import {
 } from "react-router-dom";
 // import Layout from './LayOut/Layout';
 import HomePage from './Pages/HomePage';
-import Cart from './components/Cart';
+import Cart from './Pages/Cart/Cart';
+import CartProvider from "./context/CartProvider";
 
 function App() {
   return (
     <Router>
-      <div className="App col-12 d-flex flex-column align-items-center">
+      <CartProvider>
         <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
-      </div>
+      </CartProvider>
     </Router>
   );
 }
