@@ -1,20 +1,22 @@
 import Navbar from 'react-bootstrap/Navbar';
-import { Container, Nav} from 'react-bootstrap';
+import { Container, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { useCart } from '../context/CartProvider';
 
-const items = [
-    { name: 'home', to: '/' },
-    { name: 'cart', to: '/cart' }
-]
+
 const Navigation = () => {
+
+    const { cart } = useCart()
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">shop</Navbar.Brand>
                 <Nav className="me-auto">
-                    {items.map(item => (
-                        <Nav.Link to={item.to} as={NavLink}>{item.name}</Nav.Link>
-                    ))}
+                    <Nav.Link to='/' as={NavLink}>Home</Nav.Link>
+                    <Nav.Link to='/cart' as={NavLink} className='position-relative'>Cart
+                        {cart.length ? <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-3 mx-1">{cart.length}</span> : null }
+                    </Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
