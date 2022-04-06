@@ -22,7 +22,7 @@ const HomePage = () => {
                             </div>
                             <div className="product-information col-12 d-flex justify-content-between align-items-center">
                                 <h6>{product.name}</h6>
-                                <p>${product.price}</p>
+                                <p>{product.price} $</p>
                             </div>
                             <button className="col-12 btn btn-sm btn-primary"
                                 onClick={() => addToCartHandler(product)}>add to cart</button>
