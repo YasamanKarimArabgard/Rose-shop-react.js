@@ -1,11 +1,10 @@
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import Input from '../common/Input/Input';
+import signupPost from '../services/SignupServices';
+import { useAuthActions, useAuth } from "../context/AuthProvider";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import Input from '../common/Input/Input';
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from 'react';
-import signupPost from '../services/SignupServices';
-import { useAuthActions } from "../context/AuthProvider";
-
 
 const initialValues = {
     name: '',
@@ -38,8 +37,16 @@ const validationSchema = Yup.object({
 const Signup = () => {
 
     const [error, setError] = useState(null);
+    const [searchParams] = useSearchParams();
+
     const navigate = useNavigate();
     const setAuth = useAuthActions()
+    const auth = useAuth();
+    const redirect = searchParams.get('redirect') || '/';
+
+    useEffect(() => {
+        if (auth) navigate('/checkout')
+    }, [redirect, auth])
 
     const onSubmit = async (values) => {
         const { name, email, phoneNumber, password } = values;
@@ -52,11 +59,10 @@ const Signup = () => {
         try {
             const { data } = await signupPost(userData);
             setAuth(data);
-            localStorage.setItem('AuthState', JSON.stringify(data))
             setError(null)
-            navigate('/')
-        } catch(error) {
-            if(error.response && error.response.data.message){
+            navigate('/' + redirect, { replace: true })
+        } catch (error) {
+            if (error.response && error.response.data.message) {
                 setError(error.response.data.message)
             }
         }
@@ -88,7 +94,7 @@ const Signup = () => {
                     type='password' />
                 <button type="submit" className="submit-btn col-3 btn btn-sm btn-primary my-1" disabled={!formik.isValid}>Signup</button>
                 {error && <p className="text-danger">{error}</p>}
-                <p className="text-info m-1">already have an account ? <Link to='/login'>login</Link></p>
+                <p className="text-info m-1">already have an account ? <Link to={`/login?redirect=${redirect}`}>login</Link></p>
             </form>
         </main>
     );

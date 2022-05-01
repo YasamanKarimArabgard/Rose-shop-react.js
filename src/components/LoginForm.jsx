@@ -1,10 +1,10 @@
+import { useState, useEffect } from "react";
 import Input from "../common/Input/Input";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import LoginUser from '../services/LoginServices';
-import { useAuthActions } from '../context/AuthProvider';
+import { useAuthActions, useAuth } from '../context/AuthProvider';
 
 const initialValues = {
     email: '',
@@ -21,17 +21,23 @@ const validationSchema = Yup.object({
 const Login = () => {
 
     const [error, setError] = useState(null);
+    const [searchParams] = useSearchParams();
+
     const navigate = useNavigate();
-    const setAuth = useAuthActions()
+    const setAuth = useAuthActions();
+    const auth = useAuth();
+    const redirect = searchParams.get('redirect') || '/';
+
+    useEffect(() => {
+        if (auth) navigate('/checkout')
+    }, [redirect, auth])
 
     const onSubmit = async (values) => {
-
         try {
             const { data } = await LoginUser(values);
             setAuth(data)
-            localStorage.setItem('AuthState', JSON.stringify(data))
             setError(null)
-            navigate('/')
+            navigate('/' + redirect, { replace: true });
         } catch (error) {
             if (error.response && error.response.data.message) {
                 setError(error.response.data.message)
@@ -58,7 +64,7 @@ const Login = () => {
                     type='password' />
                 {error && <p className="text-danger">{error}</p>}
                 <button type="submit" className="submit-btn col-3 btn btn-sm btn-primary my-1" disabled={!formik.isValid}>login</button>
-                <p className="text-info m-1">haven't an account ? <Link to='/signup'>Siginup</Link></p>
+                <p className="text-info m-1">haven't an account ? <Link to={`/signup?redirect=${redirect}`}>Siginup</Link></p>
             </form>
         </main>
     );
