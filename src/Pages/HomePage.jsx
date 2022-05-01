@@ -2,7 +2,8 @@ import Layout from "../LayOut/Layout";
 import * as data from '../data'
 import { useCartActions, useCart } from "../context/CartProvider";
 import { checkInCart } from "../utils/CheckInCart";
-
+import Button from '@mui/material/Button';
+import DrawerSide from "../components/Navigation/DrawerSide";
 const HomePage = () => {
 
 
@@ -27,8 +28,10 @@ const HomePage = () => {
                                 <h6>{product.name}</h6>
                                 <p>{product.price} $</p>
                             </div>
-                            <button className="col-12 btn btn-sm btn-primary"
-                                onClick={() => addToCartHandler(product)}>{checkInCart(cart, product) ? '+ more' : 'Add to cart'}</button>
+                            <Button variant="contained" color="primary" sx={{ width: 1 }}
+                                onClick={() => addToCartHandler(product)}
+                                disableElevation
+                            >{checkInCart(cart, product) ? '+ more' : 'Add to cart'}</Button>
                         </section>
                     ))}
                 </section>
