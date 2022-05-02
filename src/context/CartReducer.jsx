@@ -37,6 +37,14 @@ const cartReducer = (state, action) => {
                     total: state.total + action.payload.offPrice
                 }
             }
+        case 'Remove_Item':
+            const updateListCart = [...state.cart]
+                const remove = updateListCart.filter(item => item.id !== action.payload.id)
+                return {
+                    ...state,
+                    cart: remove,
+                    total: state.total - action.payload.offPrice
+                }
         default:
             return state;
     }

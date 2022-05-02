@@ -1,40 +1,27 @@
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { Button, AppBar, Box, Toolbar, Typography, InputBase, Badge } from '@mui/material';
 import { useCart } from '../../context/CartProvider';
 import { useAuth } from '../../context/AuthProvider';
 import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-
+import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import DrawerSide from '../Navigation/DrawerSide'
 
 const Navigation = () => {
 
+    const [open, setOpen] = useState(false);
+    const navigate = useNavigate()
+
     const { cart } = useCart()
     const userData = useAuth();
-    const navigate = useNavigate();
 
-    const dropdownItems = [
-        {
-            name: 'Sign up',
-            onClick: () => navigate('/signup')
-        },
-        {
-            name: 'Log in',
-            onClick: () => navigate('/login')
-        }
-    ]
+    const openToggle = () => {
+        setOpen(true)
+    }
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -85,16 +72,16 @@ const Navigation = () => {
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon/>
+                        onClick={() => openToggle()}
+                        sx={{ mr: 2 }}>
+                        <MenuIcon />
+                        <DrawerSide open={open} setOpen={setOpen} />
                     </IconButton>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
+                        sx={{ display: { xs: 'none', sm: 'block' } }}>
                         Rose Shop
                     </Typography>
                     <Search>
@@ -103,47 +90,32 @@ const Navigation = () => {
                         </SearchIconWrapper>
                         <StyledInputBase
                             placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
+                            inputProps={{ 'aria-label': 'search' }} />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'flex' } }}>
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
-                            color="inherit"
-                        >
-                            <Badge badgeContent={cart.length} color="error">
-                                <ShoppingBagIcon />
+                            color="inherit">
+                            <Badge badgeContent={cart.length} color="secondary" onClick={() => navigate('/cart')}>
+                                <LocalMallOutlinedIcon />
                             </Badge>
                         </IconButton>
-                        {
-                            userData ? <IconButton
-                                size="large"
-                                edge="end"
-                                aria-label="account of current user"
-                                aria-haspopup="true"
-                                // onClick={handleProfileMenuOpen}
-                                color="inherit">
-                                <AccountCircle />
-                            </IconButton> :
-                                <FormControl sx={{ m: 1, minWidth: 120, display: { xs: 'none', md: 'flex' } }}>
-                                    <InputLabel id="demo-simple-select-helper-label">Account</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-helper-label"
-                                        id="demo-simple-select-helper"
-                                        label="Account"
-                                    >
-                                        {dropdownItems.map(item => (
-                                            <MenuItem onClick={item.onClick}>{item.name}</MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
-                        }
+                        {userData ? <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-haspopup="true"
+                            // onClick={handleProfileMenuOpen}
+                            color="inherit">
+                            <AccountCircle />
+                        </IconButton> :
+                            <Button color='inherit' onClick={() => navigate('/signup')}>Account</Button>}
                     </Box>
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 };
 

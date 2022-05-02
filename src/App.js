@@ -11,6 +11,7 @@ import SignupPage from "./Pages/SignupPage";
 import LoginPage from './Pages/LoginPage.jsx'
 import AuthProvider, { useAuth } from "./context/AuthProvider";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ProductsPage from './Pages/ProductsPage.jsx'
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
       primary: {
         main: '#84a59d'
       },
+      secondary: {
+        main: '#db504e'
+      }
     },
   });
 
@@ -36,6 +40,7 @@ function App() {
               <Route path='/checkout' element={<CheckoutPage />} />
               <Route path='/signup' element={<SignupPage />} />
               <Route path='/login' element={<LoginPage />} />
+              <Route path='/products' element={<ProductsPage />} />
             </Routes>
           </CartProvider>
         </AuthProvider>
