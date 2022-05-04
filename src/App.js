@@ -23,6 +23,12 @@ function App() {
       },
       secondary: {
         main: '#db504e'
+      },
+      infoText: {
+        main: '#ffe8d0'
+      },
+      lightPink: {
+        main: '#f1cec8'
       }
     },
   });
