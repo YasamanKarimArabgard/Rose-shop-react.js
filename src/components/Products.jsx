@@ -28,23 +28,28 @@ const Products = () => {
 
     return (
         <>
-            <main className="products_container col-12">
+            <main className="products_container col-10">
                 <section className="product_list col-12 d-flex flex-wrap justify-content-between">
                     {data.products.map(product => (
-                        <section className="product col-5 col-md-4 bg-white m-1 p-1 rounded mx-3" key={product.id}>
+                        <section className="product col-5 col-md-2 bg-white rounded m-1 p-3" key={product.id}>
                             <div>
                                 <img src={product.image} className="w-100 h-auto"></img>
                             </div>
-                            <div className="product-information col-12 d-flex justify-content-between align-items-center">
-                                <h6>{product.name}</h6>
-                                <p>{product.price} $</p>
+                            <div className='product-information col-12 col-m-12 d-flex flex-column align-items-center p-1'>
+                                <div className="col-12 d-flex flex-column">
+                                    <h6 className='col-12'>{product.name}</h6>
+                                </div>
+                                <div className='col-12 d-flex align-items-end'>
+                                    <h6 className='col-9'>{product.price} $</h6>
+                                    <IconButton
+                                    className='col-3'
+                                        onClick={() => addToCartHandler(product)}
+                                        disableElevation
+                                    >
+                                        <ShoppingCartOutlinedIcon color="secondary" />
+                                    </IconButton>
+                                </div>
                             </div>
-                            <IconButton
-                                onClick={() => addToCartHandler(product)}
-                                disableElevation
-                            >
-                                <ShoppingCartOutlinedIcon />
-                            </IconButton>
                             <ToastAlert open={open} handleClose={handleClose} />
                         </section>
                     ))}
