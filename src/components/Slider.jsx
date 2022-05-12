@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import Img1 from '../assets/img1.jpg'
-import Img2 from '../assets/img2.jpg';
 import Img3 from '../assets/img3.jpg'
 import Img4 from '../assets/img4.jpg'
+import Img1 from '../assets/img1.jpg'
+import Img2 from '../assets/img2.jpg'
 import "swiper/css";
 import 'swiper/css/pagination';
 
@@ -11,30 +11,41 @@ import { Pagination, Autoplay } from "swiper";
 
 const Slider = () => {
 
+    const sliderItems = [
+        {
+            id: 'img1',
+            image: Img1
+        },
+        {
+            id: 'img2',
+            image: Img2
+        }, {
+            id: 'img3',
+            image: Img3
+        }, {
+            id: 'img4',
+            image: Img4
+        }
+    ]
+
     return (
-        <section className="main-slider col-12 d-flex justify-content-center mb-4" style={{height :'80vh'}}>
+        <section className="slider-container col-12 d-none d-md-none d-lg-block d-xl-block">
             <Swiper
+                centeredSlides={true}
                 loop={true}
                 modules={[Pagination, Autoplay]}
                 autoplay={{ disableOnInteraction: false, delay: 3000 }}
-                spaceBetween={30}
                 slidesPerView={1}
+                spaceBetween={40}
                 pagination={{
                     clickable: true,
                 }}
             >
-                <SwiperSlide>
-                    <img src={Img1} alt="slier img" className='w-100 h-100'/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={Img2} alt="slier img" className='w-100 h-100'/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={Img3} alt="slier img" className='w-100 h-100'/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={Img4} alt="slier img" className='w-100 h-100'/>
-                </SwiperSlide>
+                {sliderItems.map(item => (
+                    <SwiperSlide >
+                        <img src={item.image} alt="slider img" className='w-75 h-auto' />
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </section>
     );
