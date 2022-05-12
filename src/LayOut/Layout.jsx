@@ -1,13 +1,15 @@
+import Footer from "../components/Footer";
 import Navigation from "../components/Navigation/Navigation"
 import './Layout.css'
 
 const Layout = ({ children }) => {
     return (
-        <div className="layout col-12 bg-light">
+        <div className="layout col-12 bg-light d-flex flex-column">
             <Navigation />
-            <main className="col-12 d-flex flex-column align-items-center my-2">
+            <main className="main-container col-12 d-flex flex-column align-items-center">
                 {children}
             </main>
+            <Footer />
         </div>
     );
 };

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import * as data from '../data';
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { useCartActions, useCart } from "../context/CartProvider";
 import { checkInCart } from "../utils/CheckInCart";
-import { ToastAlert } from "../Pages/Cart/ToastAlert";
+import { ToastAlert } from "./ToastAlert";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Products = () => {
 
@@ -19,16 +20,18 @@ const Products = () => {
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
+            return;
         }
-        setOpen(false)
-    }
+
+        setOpen(false);
+    };
 
     return (
         <>
-            <main className="col-11">
-                <section className="product_list d-flex flex-wrap">
+            <main className="products_container col-12">
+                <section className="product_list col-12 d-flex flex-wrap justify-content-between">
                     {data.products.map(product => (
-                        <section className="product col-sm-2 bg-white m-1 p-1 rounded" key={product.id}>
+                        <section className="product col-5 col-md-4 bg-white m-1 p-1 rounded mx-3" key={product.id}>
                             <div>
                                 <img src={product.image} className="w-100 h-auto"></img>
                             </div>
@@ -36,11 +39,13 @@ const Products = () => {
                                 <h6>{product.name}</h6>
                                 <p>{product.price} $</p>
                             </div>
-                            <Button variant="contained" color="primary" sx={{ width: 1 }}
+                            <IconButton
                                 onClick={() => addToCartHandler(product)}
                                 disableElevation
-                            >{checkInCart(cart, product) ? '+ more' : 'Add to cart'}</Button>
-                            <ToastAlert open={open} handleClose={handleClose}/>
+                            >
+                                <ShoppingCartOutlinedIcon />
+                            </IconButton>
+                            <ToastAlert open={open} handleClose={handleClose} />
                         </section>
                     ))}
                 </section>

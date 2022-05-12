@@ -76,7 +76,7 @@ const Signup = () => {
     });
 
     return (
-        <main className="main_container col-10 d-flex flex-column align-items-center mt-5">
+        <main className="main_container col-10 d-flex flex-column align-items-center mt-3">
             <h5>Signup Form</h5>
             <form onSubmit={formik.handleSubmit} className='form_container col-8 border rounded p-1 mt-1 bg-white'>
                 <Input formik={formik} name='name' label='name' />
