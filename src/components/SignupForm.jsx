@@ -42,7 +42,7 @@ const Signup = () => {
     const navigate = useNavigate();
     const setAuth = useAuthActions()
     const auth = useAuth();
-    const redirect = searchParams.get('redirect') || '/';
+    const redirect = searchParams.get('redirect') || '';
 
     useEffect(() => {
         if (auth) navigate('/checkout')
