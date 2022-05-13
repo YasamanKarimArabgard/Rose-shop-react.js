@@ -4,7 +4,7 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
     return (
         <>
-            <li class='product_container list-group-item col-12 d-flex flex-row flex-wrap mb-1 justify-content-between align-items-center py-2'>
+            <li class='product_container list-group-item col-12 d-flex flex-row flex-wrap mb-1 border justify-content-between align-items-center py-2'>
                 <div className='col-4 col-md-2 d-flex'>
                     <div className='col-6 col-md-12'>
                         <img src={item.image} className='item-img'></img>
