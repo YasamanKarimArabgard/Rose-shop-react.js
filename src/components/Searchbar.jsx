@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Searchbar = ({ products, filteredItems, setFilteredItems }) => {
+const Searchbar = ({ products, setFilteredItems }) => {
 
     const [searchItems, setSearchItems] = useState('');
 

@@ -7,7 +7,7 @@ const ProductsProvider = ({ children }) => {
     const getProducts = data.products;
     const [products, setProducts] = useState(getProducts);
 
-    useEffect(() => { }, [products])
+    useEffect(()=>{},[products])
 
     return (
         <>

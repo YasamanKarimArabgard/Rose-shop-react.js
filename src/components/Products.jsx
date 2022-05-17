@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import * as data from '../data';
 import { IconButton } from "@mui/material";
 import { useCartActions } from "../context/CartProvider";
 import { checkInCart } from "../utils/CheckInCart";
@@ -7,6 +6,9 @@ import { ToastAlert } from "./ToastAlert";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Searchbar from './Searchbar';
 import { useProducts } from '../context/ProductsProvider';
+import SelectPrice from './SelectPrice';
+import SearchIcon from '@mui/icons-material/Search';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 const Products = () => {
 
@@ -15,7 +17,9 @@ const Products = () => {
     const [open, setOpen] = useState(false);
     const [filteredItems, setFilteredItems] = useState(products)
 
+    // console.log(filteredItems);
     // console.log(products);
+
     const dispatch = useCartActions();
 
     const addToCartHandler = (product) => {
@@ -33,8 +37,19 @@ const Products = () => {
     return (
         <>
             <main className="products_container col-12 d-flex flex-column align-items-center">
-                <section className='searchbar_container col-9 d-flex justify-content-center'>
-                    <Searchbar products={products} filteredItems={filteredItems} setFilteredItems={setFilteredItems} />
+                <section className='searchbar_container col-10 col-md-9 d-flex flex-wrap justify-content-between p-1 bg-white border rounded'>
+                    <div className='col-11 col-md-6 d-flex flex-nowrap justify-content-between align-items-center'>
+                        <IconButton>
+                            <SearchIcon />
+                        </IconButton>
+                        <Searchbar products={products} setFilteredItems={setFilteredItems} />
+                    </div>
+                    <div className='col-11 col-md-5 d-flex flex-nowrap justify-content-between'>
+                        <IconButton>
+                            <FilterListIcon />
+                        </IconButton>
+                        <SelectPrice products={filteredItems} setFilteredItems={setFilteredItems} />
+                    </div>
                 </section>
                 <section className="product_list col-12 d-flex flex-wrap justify-content-center mb-2">
                     {filteredItems.map(product => (

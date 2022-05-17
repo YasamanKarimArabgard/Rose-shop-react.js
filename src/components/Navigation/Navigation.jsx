@@ -8,7 +8,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DrawerSide from '../Navigation/DrawerSide';
-import Searchbar from './Searchbar';
 
 const Navigation = () => {
 
@@ -39,7 +38,6 @@ const Navigation = () => {
                         sx={{ display: { xs: 'none', sm: 'block' } }}>
                         Rose Shop
                     </Typography>
-                    <Searchbar />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'flex' } }}>
                         <IconButton

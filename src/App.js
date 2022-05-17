@@ -6,10 +6,11 @@ import {
 import HomePage from './Pages/HomePage';
 import Cart from './Pages/Cart/Cart';
 import CartProvider from "./context/CartProvider";
+import AuthProvider, { useAuth } from "./context/AuthProvider";
+import ProductsProvider from "./context/ProductsProvider";
 import CheckoutPage from "./Pages/CheckoutPage";
 import SignupPage from "./Pages/SignupPage";
 import LoginPage from './Pages/LoginPage.jsx'
-import AuthProvider, { useAuth } from "./context/AuthProvider";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ProductsPage from './Pages/ProductsPage.jsx'
 
@@ -40,14 +41,16 @@ function App() {
       <Router>
         <AuthProvider>
           <CartProvider>
-            <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<CheckoutPage />} />
-              <Route path='/signup' element={<SignupPage />} />
-              <Route path='/login' element={<LoginPage />} />
-              <Route path='/products' element={<ProductsPage />} />
-            </Routes>
+            <ProductsProvider>
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout' element={<CheckoutPage />} />
+                <Route path='/signup' element={<SignupPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/products' element={<ProductsPage />} />
+              </Routes>
+            </ProductsProvider>
           </CartProvider>
         </AuthProvider>
       </Router>
