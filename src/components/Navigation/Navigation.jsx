@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
-import { Button, AppBar, Box, Toolbar, Typography, InputBase, Badge } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Button, AppBar, Box, Toolbar, Typography, Badge } from '@mui/material';
 import { useCart } from '../../context/CartProvider';
 import { useAuth } from '../../context/AuthProvider';
-import { styled, alpha } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import DrawerSide from '../Navigation/DrawerSide'
+import DrawerSide from '../Navigation/DrawerSide';
+import Searchbar from './Searchbar';
 
 const Navigation = () => {
 
@@ -19,64 +18,20 @@ const Navigation = () => {
     const { cart } = useCart()
     const userData = useAuth();
 
-    const openToggle = () => {
-        setOpen(true)
-    }
-
-    const Search = styled('div')(({ theme }) => ({
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
-        marginRight: theme.spacing(2),
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(3),
-            width: 'auto',
-        },
-    }));
-
-    const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }));
-
-    const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: 'inherit',
-        '& .MuiInputBase-input': {
-            padding: theme.spacing(1, 1, 1, 0),
-            // vertical padding + font size from searchIcon
-            paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-            transition: theme.transitions.create('width'),
-            width: '100%',
-            [theme.breakpoints.up('md')]: {
-                width: '20ch',
-            },
-        },
-    }));
-
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+        <Box sx={{ height: '10vh' }}>
+            <AppBar position="fixed">
                 <Toolbar>
                     <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={() => openToggle()}
+                        onClick={() => setOpen(true)}
                         sx={{ mr: 2 }}>
                         <MenuIcon />
-                        <DrawerSide open={open} setOpen={setOpen} />
                     </IconButton>
+                    <DrawerSide open={open} setOpen={setOpen} />
                     <Typography
                         variant="h6"
                         noWrap
@@ -84,14 +39,7 @@ const Navigation = () => {
                         sx={{ display: { xs: 'none', sm: 'block' } }}>
                         Rose Shop
                     </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }} />
-                    </Search>
+                    <Searchbar />
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'flex' } }}>
                         <IconButton
@@ -107,7 +55,7 @@ const Navigation = () => {
                             edge="end"
                             aria-label="account of current user"
                             aria-haspopup="true"
-                            // onClick={handleProfileMenuOpen}
+                            onClick={() => navigate('/')}
                             color="inherit">
                             <AccountCircle />
                         </IconButton> :
@@ -115,7 +63,7 @@ const Navigation = () => {
                     </Box>
                 </Toolbar>
             </AppBar>
-        </Box >
+        </Box>
     );
 };
 
