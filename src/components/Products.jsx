@@ -10,7 +10,6 @@ const Products = () => {
 
     const [open, setOpen] = useState(false);
 
-    const { cart } = useCart()
     const dispatch = useCartActions();
 
     const addToCartHandler = (product) => {
@@ -39,16 +38,18 @@ const Products = () => {
                                 <div className="col-12 pt-1">
                                     <h6 className='col-12'>{product.name}</h6>
                                 </div>
-                                <div className='col-12 d-flex align-items-end'>
+                                <div className='col-12 d-flex align-items-end justify-content-between'>
                                     <h6 className='col-9'>{product.price} $</h6>
-                                    <IconButton
-                                        color='primary'
-                                        className='col-3'
-                                        onClick={() => addToCartHandler(product)}
-                                        disableElevation
-                                    >
-                                        <ShoppingCartOutlinedIcon color="secondary" />
-                                    </IconButton>
+                                    <div className='col-3 d-flex justify-content-end'>
+                                        <IconButton
+                                            sx={{ bgcolor: 'lightPink.main' }}
+                                            onClick={() => addToCartHandler(product)}
+                                            color='secondary'
+                                            disableElevation
+                                        >
+                                            <ShoppingCartOutlinedIcon color="secondary" />
+                                        </IconButton>
+                                    </div>
                                 </div>
                             </div>
                             <ToastAlert open={open} handleClose={handleClose} />
