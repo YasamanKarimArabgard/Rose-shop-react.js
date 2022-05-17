@@ -26,7 +26,7 @@ const DrawerSide = ({ open, setOpen }) => {
     return (
         <>
             <SwipeableDrawer variant='temporary' hideBackdrop={false} open={open} onClose={() => setOpen(false)}>
-                <Typography sx={{ m: 2 }}  color='secondary' variant='h6'>Rose Shop</Typography>
+                <Typography sx={{ m: 2 }} color='secondary' variant='h6'>Rose Shop</Typography>
                 <Divider />
                 <List>
                     {drawerItems.map(item => (

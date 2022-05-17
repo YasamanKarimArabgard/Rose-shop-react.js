@@ -43,8 +43,9 @@ const Navigation = () => {
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
-                            color="inherit">
-                            <Badge badgeContent={cart.length} color="secondary" onClick={() => navigate('/cart')}>
+                            color="inherit"
+                            onClick={() => navigate('/cart')}>
+                            <Badge badgeContent={cart.length} color="secondary">
                                 <LocalMallOutlinedIcon />
                             </Badge>
                         </IconButton>

@@ -38,13 +38,13 @@ const Products = () => {
         <>
             <main className="products_container col-12 d-flex flex-column align-items-center">
                 <section className='searchbar_container col-10 col-md-9 d-flex flex-wrap justify-content-between p-1 bg-white border rounded'>
-                    <div className='col-11 col-md-6 d-flex flex-nowrap justify-content-between align-items-center'>
+                    <div className='col-12 col-md-6 d-flex flex-nowrap justify-content-start align-items-center'>
                         <IconButton>
                             <SearchIcon />
                         </IconButton>
                         <Searchbar products={products} setFilteredItems={setFilteredItems} />
                     </div>
-                    <div className='col-11 col-md-5 d-flex flex-nowrap justify-content-between'>
+                    <div className='col-12 col-md-6 d-flex flex-nowrap justify-content-start align-items-center'>
                         <IconButton>
                             <FilterListIcon />
                         </IconButton>
