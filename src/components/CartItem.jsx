@@ -16,7 +16,7 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
                         <h6 className='col-12 col-md-4 d-flex'>{item.offPrice * item.quantity} $</h6>
                     </div>
                     <div className='col-12 col-md-5 d-flex flex-row justify-content-between'>
-                        <div className='d-flex col-8 col-md-6 justify-content-between align-items-center rounded border '>
+                        <div className='d-flex col-8 col-md-6 justify-content-between align-items-center rounded border'>
                             <button onClick={() => decHandler(item)} className='btn btn-sm h-100'>-</button>
                             <p className='mt-3'>{item.quantity}</p>
                             <button onClick={() => incHandler(item)} className='btn btn-sm h-100'>+</button>

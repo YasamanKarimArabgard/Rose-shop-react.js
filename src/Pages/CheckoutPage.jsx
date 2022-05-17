@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../LayOut/Layout';
+import Layout from '../Layout/Layout';
 import Checkout from '../components/Checkout'
 
 const CheckoutPage = () => {

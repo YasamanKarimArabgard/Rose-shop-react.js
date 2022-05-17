@@ -6,7 +6,6 @@ import { useFormik, validateYupSchema } from "formik";
 import { useState } from "react";
 import { useCart } from '../context/CartProvider'
 import { useNavigate } from "react-router-dom";
-import Layout from '../LayOut/Layout'
 
 const initialValues = {
     address: '',
@@ -35,9 +34,10 @@ const Checkout = () => {
     const [error, setError] = useState(null);
     const { cart, total } = useCart();
 
-    console.log(cart);
+    const Auth = useAuth();
     const navigate = useNavigate()
-
+    
+    // console.log(cart);
     const onSubmit = () => {
         navigate('/')
     }
@@ -50,8 +50,6 @@ const Checkout = () => {
     });
 
 
-
-    const Auth = useAuth();
     return (
         <main className="main_container col-11 d-flex flex-wrap flex-md-nowrap justify-content-between mt-3">
             {Auth ? <>

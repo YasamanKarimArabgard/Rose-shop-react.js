@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '../../LayOut/Layout';
+import Layout from '../../Layout/Layout';
 import { useCart, useCartActions } from '../../context/CartProvider'
 import './Cart.css'
 import { Link } from 'react-router-dom';
