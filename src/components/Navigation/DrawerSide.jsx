@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import List from '@mui/material/List';
-// import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Drawer from '@mui/material/Drawer';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import { IconButton } from '@mui/material';
-import { products } from '../../data';
-import { useNavigate } from 'react-router';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import { useNavigate } from 'react-router-dom';
+import { Divider, Typography } from '@mui/material';
+
 
 const DrawerSide = ({ open, setOpen }) => {
 
@@ -26,25 +24,20 @@ const DrawerSide = ({ open, setOpen }) => {
     ]
 
     return (
-        <div>
-            <Drawer variant='temporary' hideBackdrop={false} open={open}>
-                <IconButton edge="start"
-                    color="inherit"
-                    onClick={() => setOpen(false)}>
-                    <ArrowBackIosNewIcon />
-                </IconButton>
+        <>
+            <SwipeableDrawer variant='temporary' hideBackdrop={false} open={open} onClose={() => setOpen(false)}>
+                <Typography sx={{ m: 2 }}  color='secondary' variant='h6'>Rose Shop</Typography>
+                <Divider />
                 <List>
                     {drawerItems.map(item => (
                         <ListItem button onClick={item.onClick}>
-                            {/* <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon> */}
                             <ListItemText primary={item.name} />
                         </ListItem>
                     ))}
                 </List>
-            </Drawer>
-        </div>
+            </SwipeableDrawer>
+
+        </>
     );
 }
 export default DrawerSide
