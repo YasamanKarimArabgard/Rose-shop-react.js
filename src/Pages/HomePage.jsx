@@ -6,7 +6,7 @@ const HomePage = () => {
 
     return (
         <Layout>
-                <Home/>
+            <Home/>
         </Layout>
     );
 };

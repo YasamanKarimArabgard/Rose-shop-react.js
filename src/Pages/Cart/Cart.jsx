@@ -3,7 +3,7 @@ import Layout from '../../LayOut/Layout';
 import { useCart, useCartActions } from '../../context/CartProvider'
 import './Cart.css'
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import CartItem from '../../components/CartItem';
 
 const Cart = () => {
@@ -31,10 +31,10 @@ const Cart = () => {
 
     return (
         <Layout>
-            <main className='cart-container col-11 col-md-11 d-flex justify-content-between flex-wrap mb-1'>
-                <section className='col-12 col-md-8'>
+            <main className='cart-container col-11 col-md-11 d-flex flex-wrap flex-md-nowrap justify-content-between'>
+                <section className='col-12 col-md-9 m-1'>
                     {cart.map(item => (
-                        <ul class="list-group col-12 col-md-12 d-flex mb-2">
+                        <ul class="list-group list-group-flush rounded col-12 col-md-12 d-flex mb-2">
                             <CartItem item={item}
                                 incHandler={incHandler}
                                 decHandler={decHandler}
@@ -56,8 +56,8 @@ const CartSummary = ({ total, cart }) => {
     const orgPrice = cart.length ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0) : 0;
 
     return <>
-        <section className='col-12 col-md-3'>
-            <div className='col-12 d-flex flex-column rounded border bg-white h-auto mb-1 p-2'>
+        <section className='col-12 col-md-3 m-1'>
+            <div className='col-12 d-flex flex-column rounded border bg-white h-auto mb-1 p-2 '>
                 <h5>Cart Summary</h5>
                 <div className='col-12 d-flex justify-content-between align-items-center mt-3 px-1'>
                     <h6>original total:</h6>
