@@ -36,7 +36,7 @@ const Checkout = () => {
 
     const Auth = useAuth();
     const navigate = useNavigate()
-    
+
     // console.log(cart);
     const onSubmit = () => {
         navigate('/')
@@ -51,17 +51,17 @@ const Checkout = () => {
 
 
     return (
-        <main className="main_container col-11 d-flex flex-wrap flex-md-nowrap justify-content-between mt-3">
+        <main className="checkout_container col-11 d-flex flex-wrap flex-md-nowrap justify-content-between mt-3">
             {Auth ? <>
-                <section className="col-12 col-md-8 bg-white p-2 m-1 d-flex flex-column align-items-center rounded border order-2 order-md-1">
-                    <div className="col-12 col-md-11 d-flex flex-column">
+                <section className="checkout_customer-information col-12 col-md-8 bg-white p-2 m-1 d-flex flex-column align-items-center rounded border order-2 order-md-1">
+                    <div className="customer_information col-12 col-md-11 d-flex flex-column">
                         <h6>Customer informations</h6>
                         <Divider />
                         <p>Name : {Auth.name}</p>
                         <p>Email : {Auth.email}</p>
                         <p>Phone number : {Auth.phoneNumber}</p>
                     </div>
-                    <div className="col-12 col-md-11 mt-2">
+                    <div className="customer_information-payment col-12 col-md-11 mt-2">
                         <h6>Payment details</h6>
                         <Divider />
                         <form
@@ -98,14 +98,14 @@ const Checkout = () => {
                         </form>
                     </div>
                 </section>
-                <section className="col-12 col-md-4 bg-white p-2 m-1 rounded border order-1 order-md-2">
+                <section className="order col-12 col-md-4 bg-white p-2 m-1 rounded border order-1 order-md-2">
                     <h6>Order</h6>
                     <Divider />
                     <div className="col-12 col-md-11">
                         {cart.map(item => (
                             <ul class="order-list list-group list-group-flush col-12 col-md-12 mb-2 mx-2">
                                 <li class="order_item list-group-item col-12 d-flex align-items-center justify-content-between" key={item.id}>
-                                    <img src={item.image} className='item-img'></img>
+                                    <img src={item.image} className='item-img w-100 h-auto'></img>
                                     <p>{item.name}</p>
                                     <p>{item.quantity}</p>
                                     <p>{total}</p>

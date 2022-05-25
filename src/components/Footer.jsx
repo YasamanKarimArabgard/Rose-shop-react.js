@@ -2,6 +2,7 @@ import { Box, Typography, BottomNavigation, BottomNavigationAction } from "@mui/
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (

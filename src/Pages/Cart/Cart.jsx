@@ -32,9 +32,9 @@ const Cart = () => {
     return (
         <Layout>
             <main className='cart-container col-11 col-md-11 d-flex flex-wrap flex-md-nowrap justify-content-between'>
-                <section className='col-12 col-md-9 m-1'>
+                <section className='cart col-12 col-md-9 m-1'>
                     {cart.map(item => (
-                        <ul class="list-group list-group-flush rounded col-12 col-md-12 d-flex mb-2">
+                        <ul class="cart-item list-group list-group-flush rounded col-12 col-md-12 d-flex mb-2">
                             <CartItem item={item}
                                 incHandler={incHandler}
                                 decHandler={decHandler}
@@ -56,23 +56,23 @@ const CartSummary = ({ total, cart }) => {
     const orgPrice = cart.length ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0) : 0;
 
     return <>
-        <section className='col-12 col-md-3 m-1'>
-            <div className='col-12 d-flex flex-column rounded border bg-white h-auto mb-1 p-2 '>
+        <section className='cartSummry-container col-12 col-md-3 m-1'>
+            <div className='cartSummry col-12 d-flex flex-column rounded border bg-white h-auto mb-1 p-2 '>
                 <h5>Cart Summary</h5>
-                <div className='col-12 d-flex justify-content-between align-items-center mt-3 px-1'>
+                <div className='total col-12 d-flex justify-content-between align-items-center mt-3 px-1'>
                     <h6>original total:</h6>
                     <p>{orgPrice}$</p>
                 </div>
-                <div className='col-12 d-flex justify-content-between align-items-center px-1'>
+                <div className='discount col-12 d-flex justify-content-between align-items-center px-1'>
                     <h6>discount totoal:</h6>
                     <p>{orgPrice - total}$</p>
                 </div>
-                <div className='col-12 d-flex justify-content-between align-items-center px-1'>
+                <div className='netPrice col-12 d-flex justify-content-between align-items-center px-1'>
                     <h6>net price:</h6>
                     <p>{total}$</p>
                 </div>
                 <Link to='/signup?redirect=checkout' style={{ textDecoration: 'none' }}>
-                    <Button variant="contained" color="secondary" sx={{ width: 1 }} disableElevation>Checkout</Button>
+                    <Button variant="outlined" color="secondary" id='checkout-btn' sx={{ width: 1 }} disableelevation>Checkout</Button>
                 </Link>
             </div>
         </section>

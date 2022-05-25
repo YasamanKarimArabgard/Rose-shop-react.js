@@ -7,9 +7,9 @@ export const ToastAlert = ({ handleClose, open }) => {
         <Snackbar
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
             open={open}
-            autoHideDuration={2000}
+            autoHideDuration={1000}
             onClose={handleClose}>
-            <MuiAlert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            <MuiAlert onClose={handleClose} severity='success' sx={{ width: '100%' }}>
                 Product added to cart successfully!
             </MuiAlert>
         </Snackbar>
