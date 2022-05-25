@@ -13,6 +13,9 @@ import SignupPage from "./Pages/SignupPage";
 import LoginPage from './Pages/LoginPage.jsx'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ProductsPage from './Pages/ProductsPage.jsx'
+import NotFound from "./Pages/NotFoundPage";
+import ProfilePage from "./Pages/ProfilePage";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
 
@@ -34,8 +37,6 @@ function App() {
     },
   });
 
-
-  const auth = useAuth();
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -48,7 +49,10 @@ function App() {
                 <Route path='/checkout' element={<CheckoutPage />} />
                 <Route path='/signup' element={<SignupPage />} />
                 <Route path='/login' element={<LoginPage />} />
-                <Route path='/products' element={<ProductsPage />} />
+                <Route path='/dresses' element={<ProductsPage />} />
+                <Route path='/dresses/:id' element={<ProductPage />} />
+                <Route path='/profile' element={<ProfilePage />} />
+                <Route path='/*' element={<NotFound />} />
               </Routes>
             </ProductsProvider>
           </CartProvider>
