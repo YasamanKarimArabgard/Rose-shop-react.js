@@ -1,4 +1,4 @@
-import Home from "../components/Home";
+import Home from '../components/Home/Home';
 import Layout from "../Layout/Layout";
 
 
@@ -6,7 +6,7 @@ const HomePage = () => {
 
     return (
         <Layout>
-            <Home/>
+            <Home />
         </Layout>
     );
 };
