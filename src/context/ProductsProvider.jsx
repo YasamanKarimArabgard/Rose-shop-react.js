@@ -7,8 +7,6 @@ const ProductsProvider = ({ children }) => {
     const getProducts = data.products;
     const [products, setProducts] = useState(getProducts);
 
-    useEffect(()=>{},[products])
-
     return (
         <>
             <ProductsContext.Provider value={products}>
