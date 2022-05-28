@@ -1,3 +1,3 @@
 export function checkInCart(cart, product) {
-    return cart.find(c =>  c.id === product.id )
+    return cart.find(p => p.id == product.id)
 }
