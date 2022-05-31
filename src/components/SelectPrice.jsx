@@ -46,7 +46,7 @@ const SelectPrice = ({ products, setFilteredItems }) => {
     return (
         <>
             <Select
-            className='col-10'
+            className='w-100'
                 options={options}
                 value={selectedPrices}
                 onChange={selectPriceHandler} >
