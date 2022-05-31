@@ -16,6 +16,7 @@ import ProductsPage from './Pages/ProductsPage.jsx'
 import NotFound from "./Pages/NotFoundPage";
 import ProfilePage from "./Pages/ProfilePage";
 import ProductPage from "./Pages/ProductPage";
+import AboutUsPage from "./Pages/AboutUsPage";
 
 function App() {
 
@@ -28,12 +29,6 @@ function App() {
       secondary: {
         main: '#db504e'
       },
-      infoText: {
-        main: '#ffe8d0'
-      },
-      lightPink: {
-        main: '#f1cec8'
-      }
     },
   });
 
@@ -52,6 +47,7 @@ function App() {
                 <Route path='/dresses' element={<ProductsPage />} />
                 <Route path='/dresses/:id' element={<ProductPage />} />
                 <Route path='/profile' element={<ProfilePage />} />
+                <Route path='/about-us' element={<AboutUsPage />} />
                 <Route path='/*' element={<NotFound />} />
               </Routes>
             </ProductsProvider>
