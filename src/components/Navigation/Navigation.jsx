@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button, AppBar, Box, Toolbar, Typography, Badge, MenuItem, Menu } from '@mui/material';
 import { useCart } from '../../context/CartProvider';
 import { useAuth } from '../../context/AuthProvider';
@@ -31,7 +31,7 @@ const Navigation = () => {
         {
             id: 3,
             name: 'About us',
-            onclick: () => navigate('/aboutus')
+            onclick: () => navigate('/about-us')
         },
     ]
 
