@@ -1,16 +1,14 @@
 import { useProducts } from '../../context/ProductsProvider';
+import { Link } from 'react-router-dom';
 import DeskTopBanner from './DeskTopBanner';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { useNavigate } from 'react-router';
 import ResponsiveBanner from './ResponsiveBanner';
 
 
 const Home = () => {
 
     const products = useProducts();
-
-    const navigate = useNavigate()
 
     return (
         <main className='home_container col-12 d-flex flex-column align-items-center mt-2'>
@@ -23,7 +21,9 @@ const Home = () => {
                 <article className='col-12 mt-3 mx-2'>
                     <Stack direction="row" spacing={2}>
                         {products.slice(2, 5).map(item => (
-                            <Avatar alt="popular" src={item.image} sx={{ width: 56, height: 56 }} onClick={() => navigate('/products')} />
+                            <Link to={`/dresses/${item.id}`}>
+                                <Avatar alt="popular" src={item.image} sx={{ width: 56, height: 56 }} />
+                            </Link>
                         ))}
                     </Stack>
                 </article>

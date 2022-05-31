@@ -16,4 +16,4 @@ const Input = ({ type = 'text', name, formik, label }) => {
     );
 };
 
-export default Input
+export default Input;

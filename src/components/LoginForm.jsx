@@ -56,7 +56,11 @@ const Login = () => {
         <main className="loginForm_container col-12 col-md-10 d-flex flex-column align-items-center mt-3">
             <h5>Login Form</h5>
             <form onSubmit={formik.handleSubmit} className='loginForm_controls col-11 col-md-8 border rounded p-1 mt-1 bg-white'>
-                <Input formik={formik} name='email' label='email' type="email" />
+                <Input
+                    formik={formik}
+                    name='email'
+                    label='email'
+                    type="email" />
                 <Input
                     formik={formik}
                     name='password'
