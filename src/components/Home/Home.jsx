@@ -21,7 +21,7 @@ const Home = () => {
                 <article className='col-12 mt-3 mx-2'>
                     <Stack direction="row" spacing={2}>
                         {products.slice(2, 5).map(item => (
-                            <Link to={`/dresses/${item.id}`}>
+                            <Link to={`/dresses/${item.id}`} key={item.id}>
                                 <Avatar alt="popular" src={item.image} sx={{ width: 56, height: 56 }} />
                             </Link>
                         ))}

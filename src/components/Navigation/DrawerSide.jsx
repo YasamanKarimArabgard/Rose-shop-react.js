@@ -3,11 +3,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Divider, Typography } from '@mui/material';
 
 
-const DrawerSide = ({ open, setOpen, pages}) => {
+const DrawerSide = ({ open, setOpen, pages }) => {
 
     return (
         <>
@@ -16,7 +16,16 @@ const DrawerSide = ({ open, setOpen, pages}) => {
                 <Divider />
                 <List>
                     {pages.map(item => (
-                        <ListItem button onClick={item.onclick} key={item.id}>
+                        <ListItem button
+                            sx={{
+                                color: 'black',
+                                '&.active': {
+                                    color: '#db504e'
+                                }
+                            }}
+                            to={item.onclick}
+                            component={NavLink}
+                            key={item.id}>
                             <ListItemText primary={item.name} />
                         </ListItem>
                     ))}
@@ -26,4 +35,4 @@ const DrawerSide = ({ open, setOpen, pages}) => {
         </>
     );
 }
-export default DrawerSide
+export default DrawerSide;

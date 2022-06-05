@@ -52,11 +52,9 @@ const Products = () => {
                 </section>
                 <section className="product_list col-12 d-flex flex-wrap justify-content-start mb-2">
                     {filteredItems.map(product => (
-                        <>
-                            <Product product={product} addToCartHandler={addToCartHandler} cart={cart}/>
-                            <ToastAlert open={open} handleClose={handleClose} products={products} product={product} />
-                        </>
+                        <Product product={product} addToCartHandler={addToCartHandler} cart={cart} key={product.id} />
                     ))}
+                    <ToastAlert open={open} handleClose={handleClose} products={products}/>
                 </section>
             </main>
         </>

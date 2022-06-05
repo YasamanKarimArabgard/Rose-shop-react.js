@@ -20,8 +20,7 @@ const Product = ({ product, addToCartHandler, cart}) => {
                             <IconButton
                                 size='small'
                                 onClick={(e) => addToCartHandler(e, product)}
-                                color='secondary'
-                                disableElevation>
+                                color='secondary'>
                                 {
                                     checkInCart(cart, product) ?
                                         <AddShoppingCartOutlinedIcon /> :

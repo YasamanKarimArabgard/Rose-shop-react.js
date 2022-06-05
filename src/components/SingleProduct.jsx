@@ -47,7 +47,7 @@ const SingleProduct = () => {
                     <h6 className='text-dark'>features</h6>
                     {singleProduct.description.map(support => (
                         <div className='col-6 col-sm-6 col-md-6 d-flex'>
-                            <i class="bi bi-check text-secondary"></i>
+                            <i className="bi bi-check text-secondary"></i>
                             <h6 className='text-secondary mx-1'>{support.support}</h6>
                         </div>
                     ))}
@@ -59,7 +59,7 @@ const SingleProduct = () => {
                         decHandler={decHandler}
                         incHandler={incHandler}
                         removeHandler={removeHandler} />
-                    : <Button variant='contained' color='secondary' onClick={() => incHandler(singleProduct)} disableElevation>Add to cart</Button>
+                    : <Button variant='contained' color='secondary' onClick={() => incHandler(singleProduct)} disableElevation={true}>Add to cart</Button>
                 }
             </section>
         </main>
@@ -76,7 +76,7 @@ export const QuantityControls = ({ singleProduct, decHandler, incHandler, single
             <div className='single_product_controls_quantity d-flex col-8 col-md-8 justify-content-between align-items-center rounded border' style={{ height: '2.5em' }}>
                 {singleProductInCart.quantity > 1 ?
                     <button onClick={() => decHandler(singleProduct)} className='btn btn-sm h-100 mx-1'>
-                        <i class="bi bi-dash-lg"></i>
+                        <i className="bi bi-dash-lg"></i>
                     </button> :
                     <IconButton onClick={() => removeHandler(singleProduct)} id='cartItem-control-remove'>
                         <DeleteOutlineOutlinedIcon color='secondary'></DeleteOutlineOutlinedIcon>
