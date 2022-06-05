@@ -2,8 +2,8 @@
 
 const AboutUs = () => {
     return (
-        <main className="col-10 d-flex justify-content-center">
-            <section className="col-12 d-flex flex-column bg-white border p-3 rounded mt-2 mt-md-0">
+        <main className="col-11 col-sm-11 col-md-10 d-flex justify-content-center">
+            <section className="col-12 d-flex flex-column bg-white border p-3 rounded mt-3 mt-md-0">
                 <h5>About us</h5>
                 <p className="text-wrap">
                     Hi, everyone ,<br/>
