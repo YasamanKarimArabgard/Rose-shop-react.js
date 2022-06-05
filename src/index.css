@@ -85,6 +85,9 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  scroll-behavior: smooth;
+  scrollbar-color: #84a59d white;
+-webkit-scrollbar-color: #84a59d white;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -104,6 +107,7 @@ section {
 
 body {
   line-height: 1;
+  
 }
 
 ol,
@@ -127,4 +131,9 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.navlink-nav:hover{
+  color: #FAF8F7;
+  text-decoration: none !important;
 }

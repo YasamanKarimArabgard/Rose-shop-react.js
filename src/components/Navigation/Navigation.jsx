@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, AppBar, Box, Toolbar, Typography, Badge, MenuItem, Menu } from '@mui/material';
+import { useNavigate, NavLink } from 'react-router-dom';
+import { Button, AppBar, Box, Toolbar, Typography, Badge } from '@mui/material';
 import { useCart } from '../../context/CartProvider';
 import { useAuth } from '../../context/AuthProvider';
 import IconButton from '@mui/material/IconButton';
@@ -12,7 +12,6 @@ import DrawerSide from '../Navigation/DrawerSide';
 const Navigation = () => {
 
     const [open, setOpen] = useState(false);
-    const navigate = useNavigate()
 
     const { cart } = useCart()
     const userData = useAuth();
@@ -21,17 +20,17 @@ const Navigation = () => {
         {
             id: 1,
             name: 'Home',
-            onclick: () => navigate('/')
+            onclick: '/'
         },
         {
             id: 2,
             name: 'Dresses',
-            onclick: () => navigate('/dresses')
+            onclick: '/dresses'
         },
         {
             id: 3,
             name: 'About us',
-            onclick: () => navigate('/about-us')
+            onclick: '/about-us'
         },
     ]
 
@@ -42,14 +41,14 @@ const Navigation = () => {
                     <IconButton
                         size="large"
                         edge="start"
-                        color="inherit"
                         aria-label="open drawer"
                         onClick={() => setOpen(true)}
-                        sx={{ mr: 2, display: { xs: 'block', md: 'none' } }}>
+                        sx={{ mr: 2, display: { xs: 'block', md: 'none' }, color: '#FAF8F7' }}>
                         <MenuIcon />
                     </IconButton>
                     <DrawerSide open={open} setOpen={setOpen} pages={pages} />
                     <Typography
+                        color='#FAF8F7'
                         variant="h6"
                         noWrap
                         component="div"
@@ -64,20 +63,34 @@ const Navigation = () => {
                             horizontal: 'left',
                         }}>
                         {pages.map((page) => (
-                            <Button onClick={page.onclick}
-                                sx={{ my: 2, color: 'black', display: 'block' }}
+                            <Button
+                                component={NavLink}
+                                className='navlink-nav'
+                                sx={{
+                                    my: 2, color: '#FAF8F7', display: 'block',
+                                    '&.active': {
+                                        color: '#db504e',
+                                    },
+                                }}
+                                to={page.onclick}
                                 key={page.id}>
-                                {page.name}
-                            </Button>
+                                {page.name}</Button>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'flex' } }}>
                         <IconButton
+                            className='navlink-nav'
                             size="large"
                             aria-label="show 17 new notifications"
-                            color="inherit"
-                            onClick={() => navigate('/cart')}>
+                            sx={{
+                                color: '#FAF8F7',
+                                '&.active': {
+                                    color: '#db504e'
+                                }
+                            }}
+                            component={NavLink}
+                            to='/cart'>
                             <Badge badgeContent={cart.length} color="secondary">
                                 <LocalMallOutlinedIcon />
                             </Badge>
@@ -85,17 +98,33 @@ const Navigation = () => {
                         {userData ? <IconButton
                             size="large"
                             edge="end"
+                            className='navlink-nav'
+                            component={NavLink}
+                            sx={{
+                                color: '#FAF8F7',
+                                '&.active': {
+                                    color: '#db504e'
+                                }
+                            }}
                             aria-label="account of current user"
                             aria-haspopup="true"
-                            onClick={() => navigate('/profile')}
-                            color="inherit">
+                            to='/profile'>
                             <AccountCircle />
                         </IconButton> :
-                            <Button color='inherit' onClick={() => navigate('/signup')}>Account</Button>}
+                            <Button
+                                sx={{
+                                    color: '#FAF8F7',
+                                    '&.active': {
+                                        color: '#db504e'
+                                    }
+                                }}
+                                className='navlink-nav'
+                                component={NavLink}
+                                to='/signup'>Account</Button>}
                     </Box>
                 </Toolbar>
             </AppBar>
-        </Box>
+        </Box >
     );
 };
 

@@ -20,7 +20,6 @@ import AboutUsPage from "./Pages/AboutUsPage";
 
 function App() {
 
-
   const theme = createTheme({
     palette: {
       primary: {
