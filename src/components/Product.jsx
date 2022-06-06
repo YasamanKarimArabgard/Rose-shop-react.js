@@ -15,7 +15,7 @@ const Product = ({ product, addToCartHandler, cart}) => {
                         <h6 className='col-12 text-nowrap text-truncate'>{product.name}</h6>
                     </div>
                     <div className='col-12 d-flex align-items-end justify-content-between'>
-                        <h6 className='col-9'>{product.price}$</h6>
+                        <h6 className='col-9'>${product.price}</h6>
                         <div className='col-3 d-flex justify-content-end'>
                             <IconButton
                                 size='small'
