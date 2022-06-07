@@ -13,8 +13,8 @@ const SingleProduct = () => {
     const dispatch = useCartActions();
 
 
-    const singleProduct = products.find(p => p.id === id);
-    const singleProductInCart = cart.find(p => p.id === id);
+    const singleProduct = products.find(p => p.id == id);
+    const singleProductInCart = cart.find(p => p.id == id);
 
     const incHandler = (cartItem) => {
         dispatch({ type: 'Add_To_Cart', payload: cartItem })
