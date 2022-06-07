@@ -12,7 +12,7 @@ const DeskTopBanner = () => {
                 <h3 className='text-white'>Do you need something?</h3>
                 <Button variant='outlined' color='secondary' onClick={() => navigate('/dresses')}>Buy Now</Button>
             </div>
-            <img src={deskTopPoster} className='w-100 h-auto' />
+            <img src={deskTopPoster} className='w-100 h-auto' alt='banner' />
         </div>
     );
 };

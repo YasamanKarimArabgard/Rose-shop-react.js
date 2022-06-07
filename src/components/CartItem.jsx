@@ -8,7 +8,7 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
             <li className='cartItem_container list-group-item col-12 d-flex flex-row flex-wrap mb-1 border justify-content-between align-items-center rounded py-2'>
                 <div className='cartItem_image_container col-4 col-md-2 d-flex'>
                     <div className='cartItem-image col-9 col-md-6 col-lg-3'>
-                        <img src={item.image} className='w-100 h-auto' id='item-img'></img>
+                        <img src={item.image} className='w-100 h-auto' id='item-img' alt={item.name}></img>
                     </div>
                 </div>
                 <div className='cartItem_information_container col-8 col-md-10 d-flex flex-column flex-md-row justify-content-md-between'>

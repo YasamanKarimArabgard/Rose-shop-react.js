@@ -6,7 +6,7 @@ import {
 import HomePage from './Pages/HomePage';
 import Cart from './Pages/Cart/Cart';
 import CartProvider from "./context/CartProvider";
-import AuthProvider, { useAuth } from "./context/AuthProvider";
+import AuthProvider from "./context/AuthProvider";
 import ProductsProvider from "./context/ProductsProvider";
 import CheckoutPage from "./Pages/CheckoutPage";
 import SignupPage from "./Pages/SignupPage";

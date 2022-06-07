@@ -1,6 +1,5 @@
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { useParams } from 'react-router';
 
 export const ToastAlert = ({ handleClose, open }) => {
     return (

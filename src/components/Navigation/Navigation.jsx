@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button, AppBar, Box, Toolbar, Typography, Badge } from '@mui/material';
 import { useCart } from '../../context/CartProvider';
 import { useAuth } from '../../context/AuthProvider';

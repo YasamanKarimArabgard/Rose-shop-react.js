@@ -1,6 +1,6 @@
+import Layout from '../Layout/Layout';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Layout from '../Layout/Layout';
 
 const NotFoundPage = () => {
 

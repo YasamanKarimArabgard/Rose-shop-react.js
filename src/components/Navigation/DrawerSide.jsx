@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -8,9 +8,7 @@ import { Divider, Typography } from '@mui/material';
 
 
 const DrawerSide = ({ open, setOpen, pages }) => {
-
-    return (
-        <>
+    return (<>
             <SwipeableDrawer variant='temporary' hideBackdrop={false} open={open} onClose={() => setOpen(false)}>
                 <Typography sx={{ m: 2 }} color='secondary' variant='h6'>Rose Shop</Typography>
                 <Divider />

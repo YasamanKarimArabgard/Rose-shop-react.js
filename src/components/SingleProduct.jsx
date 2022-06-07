@@ -13,8 +13,8 @@ const SingleProduct = () => {
     const dispatch = useCartActions();
 
 
-    const singleProduct = products.find(p => p.id == id);
-    const singleProductInCart = cart.find(p => p.id == id);
+    const singleProduct = products.find(p => p.id === id);
+    const singleProductInCart = cart.find(p => p.id === id);
 
     const incHandler = (cartItem) => {
         dispatch({ type: 'Add_To_Cart', payload: cartItem })
@@ -32,7 +32,7 @@ const SingleProduct = () => {
     return (
         <main className='single-product-container col-11 col-md-11 col-lg-6 flex-wrap d-flex justify-content-center justify-content-md-start bg-white border p-1 mt-md-2 m-1'>
             <section className='single-product-image col-12 col-md-6 mx-md-3 mx-lg-3'>
-                <img src={singleProduct.image} className='w-100 h-auto'></img>
+                <img src={singleProduct.image} className='w-100 h-auto' alt={singleProduct.name}></img>
             </section>
             <section className='single-product-information col-11 col-md-5 d-flex flex-column justify-content-evenly mx-lg-3 mx-md-2 mt-2'>
                 <h3>{singleProduct.name}</h3>

@@ -12,7 +12,8 @@ const ResponsiveBanner = () => {
                 <h4 className='text-white'>Do you need something?</h4>
                 <Button variant='outlined' color='secondary' size='small' onClick={() => navigate('/dresses')}>Buy Now</Button>
             </div>
-            <img src={responsivePoster} className='w-100 h-auto' />
+            <img src={responsivePoster} className='w-100 h-auto' alt='banner'
+            />
         </div>
     );
 };

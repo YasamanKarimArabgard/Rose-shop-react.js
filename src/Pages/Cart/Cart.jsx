@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Layout from '../../Layout/Layout';
 import { useCart, useCartActions } from '../../context/CartProvider'
 import './Cart.css'

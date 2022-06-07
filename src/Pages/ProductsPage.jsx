@@ -2,7 +2,6 @@ import Layout from "../Layout/Layout";
 import Products from "../components/Products";
 
 const ProductsPage = () => {
-
     return (
         <Layout>
             <Products />

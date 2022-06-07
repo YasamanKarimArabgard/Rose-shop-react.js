@@ -43,8 +43,7 @@ const SelectPrice = ({ products, setFilteredItems }) => {
         filterPrices(e.value)
     }
 
-    return (
-        <>
+    return (<>
             <Select
             className='w-100'
                 options={options}

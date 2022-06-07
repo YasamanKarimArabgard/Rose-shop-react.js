@@ -23,8 +23,7 @@ const Searchbar = ({ products, setFilteredItems }) => {
     }, [products])
 
 
-    return (
-        <>
+    return (<>
             <input
                 className='form-control shadow-none'
                 type='text'

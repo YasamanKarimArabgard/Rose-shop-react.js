@@ -29,7 +29,7 @@ const Login = () => {
     const redirect = searchParams.get('redirect') || '';
 
     useEffect(() => {
-        if (auth) navigate('/checkout')
+        if (auth) navigate('/checkout');
     }, [redirect, auth])
 
     const onSubmit = async (values) => {

@@ -1,5 +1,3 @@
-
-
 const AboutUs = () => {
     return (
         <main className="col-11 col-sm-11 col-md-10 d-flex justify-content-center">
