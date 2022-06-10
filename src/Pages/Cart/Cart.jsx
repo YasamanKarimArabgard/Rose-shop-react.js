@@ -1,7 +1,7 @@
 import Layout from '../../Layout/Layout';
 import { useCart, useCartActions } from '../../context/CartProvider'
 import './Cart.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Divider, Typography } from '@mui/material';
 import CartItem from '../../components/CartItem';
 
@@ -9,6 +9,7 @@ const Cart = () => {
 
     const { cart, total } = useCart();
     const dispatch = useCartActions();
+    const navigate = useNavigate();
 
     const incHandler = (e, cartItem) => {
         e.stopPropagation();
@@ -30,7 +31,8 @@ const Cart = () => {
 
     if (!cart.length) {
         return <Layout>
-            <h5 className='mt-5 text-secondary'>Your cart is empty :)</h5>
+            <h5 className='mt-5 mb-4 text-secondary'>Your cart is empty :)</h5>
+            <Button variant="outlined" color='secondary' sx={{ mr: 1}} onClick={() => navigate('/dresses')}>Back to shop</Button>
         </Layout>
     }
 

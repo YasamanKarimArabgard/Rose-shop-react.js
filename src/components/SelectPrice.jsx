@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Select from 'react-select';
 
 const options = [
-    { value: 'Cheaper', label: 'Cheaper' },
-    { value: 'Expensiver', label: 'Expensiver' }
+    { value: 'Descending', label: 'Descending' },
+    { value: 'Ascending', label: 'Ascending' }
 ]
 
 const SelectPrice = ({ products, setFilteredItems }) => {
@@ -12,10 +12,10 @@ const SelectPrice = ({ products, setFilteredItems }) => {
 
     const filterPrices = (status) => {
         switch (status) {
-            case 'Cheaper':
-                return CheaperPrices()
-            case 'Expensiver':
-                return expensiverPrices()
+            case 'Descending':
+                return CheapPrices()
+            case 'Ascending':
+                return expensivePrices()
             default:
                 setFilteredItems(products)
         }
@@ -26,13 +26,13 @@ const SelectPrice = ({ products, setFilteredItems }) => {
     }, [products])
 
 
-    const expensiverPrices = () => {
+    const expensivePrices = () => {
         const productsCopy = [...products]
         setFilteredItems(productsCopy.sort((a, b) => b.price - a.price))
 
     }
 
-    const CheaperPrices = () => {
+    const CheapPrices = () => {
         const productsCopy = [...products]
         setFilteredItems(productsCopy.sort((a, b) => a.price - b.price))
     }
@@ -48,7 +48,8 @@ const SelectPrice = ({ products, setFilteredItems }) => {
             className='w-100'
                 options={options}
                 value={selectedPrices}
-                onChange={selectPriceHandler} >
+                onChange={selectPriceHandler}
+                placeholder='Filter by price'>
             </Select>
         </>
     );
