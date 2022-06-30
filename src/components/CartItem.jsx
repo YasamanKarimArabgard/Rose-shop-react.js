@@ -22,16 +22,16 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
                     <div className='cartItem_controls_container col-12 col-md-5 d-flex flex-row justify-content-between'>
                         <div className='cartItem_controls_quantity d-flex col-6 col-md-6 justify-content-between align-items-center rounded border' style={{ height: '3em' }}>
                             {item.quantity > 1 ?
-                                <button onClick={(e) => decHandler(e, item)} className='btn btn-sm h-100 mx-1'>
-                                    <i className="bi bi-dash-lg"></i>
+                                <button onClick={(e) => decHandler(e, item)} className='btn btn-sm h-100 mx-1 shadow-none'>
+                                    <i class="bi bi-dash"></i>
                                 </button> :
                                 <IconButton onClick={(e) => removeHandler(e, item)} id='cartItem-control-remove'>
                                     <DeleteOutlineOutlinedIcon color='secondary'></DeleteOutlineOutlinedIcon>
                                 </IconButton>
                             }
                             <p className='mt-3'>{item.quantity}</p>
-                            <button onClick={(e) => incHandler(e, item)} className='btn btn-sm h-100 mx-1'>
-                                <i className="bi bi-plus-lg"></i>
+                            <button onClick={(e) => incHandler(e, item)} className='btn btn-sm h-100 mx-1 shadow-none'>
+                                <i class="bi bi-plus"></i>
                             </button>
                         </div>
                         <IconButton onClick={(e) => removeHandler(e, item)} id='cartItem-control-remove'>

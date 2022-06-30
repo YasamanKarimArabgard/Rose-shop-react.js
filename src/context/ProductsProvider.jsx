@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
-import * as data from '../data'
+import * as data from '../data';
+
 export const ProductsContext = createContext();
 
 const ProductsProvider = ({ children }) => {

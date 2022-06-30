@@ -76,7 +76,7 @@ export const QuantityControls = ({ singleProduct, decHandler, incHandler, single
             <Typography variant='h4' color='secondary'>${singleProductInCart.offPrice * singleProductInCart.quantity}</Typography>
             <div className='single_product_controls_quantity d-flex col-8 col-md-8 justify-content-between align-items-center rounded border' style={{ height: '2.5em' }}>
                 {singleProductInCart.quantity > 1 ?
-                    <button onClick={() => decHandler(singleProduct)} className='btn btn-sm h-100 mx-1'>
+                    <button onClick={() => decHandler(singleProduct)} className='btn btn-sm h-100 mx-1 shadow-none'>
                         <i className="bi bi-dash-lg"></i>
                     </button> :
                     <IconButton onClick={() => removeHandler(singleProduct)} id='cartItem-control-remove'>
@@ -84,7 +84,7 @@ export const QuantityControls = ({ singleProduct, decHandler, incHandler, single
                     </IconButton>
                 }
                 <p className='mt-3'>{singleProductInCart.quantity}</p>
-                <button onClick={() => incHandler(singleProduct)} className='btn btn-sm h-100 mx-1'>
+                <button onClick={() => incHandler(singleProduct)} className='btn btn-sm h-100 mx-1 shadow-none'>
                     <i className="bi bi-plus-lg"></i>
                 </button>
             </div>

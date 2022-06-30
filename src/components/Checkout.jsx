@@ -13,7 +13,7 @@ const Checkout = () => {
     return (
         <main className="checkout_container col-11 d-flex flex-wrap flex-md-nowrap justify-content-between mt-3">
             {Auth && cart.length > 0 ? <>
-                <section className="checkout_customer-information col-12 col-md-9 bg-white p-2 m-1 d-flex flex-column align-items-center rounded border order-2 order-md-1">
+                <section className="checkout_customer-information col-12 col-md-9 bg-white p-2 m-1 d-flex flex-column align-items-center justify-content-between rounded border order-2 order-md-1">
                     <div className="customer_information col-12 col-md-11 d-flex flex-column">
                         <h6>Customer informations</h6>
                         <Divider />
