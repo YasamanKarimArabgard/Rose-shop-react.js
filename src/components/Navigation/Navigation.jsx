@@ -124,7 +124,7 @@ const Navigation = () => {
                     </Box>
                 </Toolbar>
             </AppBar>
-        </Box >
+        </Box>
     );
 };
 

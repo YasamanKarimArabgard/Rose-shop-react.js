@@ -34,9 +34,10 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
                                 <i class="bi bi-plus"></i>
                             </button>
                         </div>
-                        <IconButton onClick={(e) => removeHandler(e, item)} id='cartItem-control-remove'>
+                        {item.quantity > 1 && 
+                            <IconButton onClick={(e) => removeHandler(e, item)} id='cartItem-control-remove'>
                             <DeleteOutlineOutlinedIcon color='secondary'></DeleteOutlineOutlinedIcon>
-                        </IconButton>
+                        </IconButton>}
                     </div>
                 </div>
             </li>

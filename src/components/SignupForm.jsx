@@ -26,9 +26,9 @@ const validationSchema = Yup.object({
         .matches(/^[0-9]{11}$/, 'Phonenumber is not valid')
         .nullable(),
     password: Yup.string()
-        .required('Password is requires'),
-    // .matches(/^(?=.*[A-Za-z])(P=.*\d)(?=.*[@$!%#?&])LA-Za-z\d@$!%*#?&]{8,J}$/
-    //     , 'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Char'),
+        .required('Password is requires')
+    .matches(/^(?=.*[A-Za-z])(P=.*\d)(?=.*[@$!%#?&])LA-Za-z\d@$!%*#?&]{8,J}$/
+        , 'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Char'),
     passwordConfirm: Yup.string()
         .required('password confiramtion is required')
         .oneOf([Yup.ref('password'), null], 'password must match')
