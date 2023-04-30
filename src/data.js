@@ -11,7 +11,7 @@ export const products = [
     offPrice: 120,
     discount: 0,
     size: [38, 40, 42, 44],
-    image: "https://lp2.hm.com/hmgoepprod?set=source[/8c/5e/8c5e042dd9b0f75fe56b87bef3ab1cc91c34b91a.jpg],origin[dam],category[],type[LOOKBOOK],res[y],hmver[1]&call=url[file:/product/main]",
+    image: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fe3%2F51%2Fe351bd2e8af68aaacb2fc747e256fe56077e018a.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const products = [
     offPrice: 100,
     discount: 8,
     size: [38, 42, 44],
-    image: "https://lp2.hm.com/hmgoepprod?set=source[/78/9a/789a37e83258f8f3ab50e40b518e8c5839698e55.jpg],origin[dam],category[],type[LOOKBOOK],res[y],hmver[1]&call=url[file:/product/main]"
+    image: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F6b%2F70%2F6b700bf040f23c1038f71855fac8d986ad841b44.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const products = [
     offPrice: 89,
     discount: 10,
     size: [38, 40, 42, 44, 46],
-    image: "https://lp2.hm.com/hmgoepprod?set=source[/49/43/49434061c8f59d57558150b3194f617d09cdfe7d.jpg],origin[dam],category[],type[LOOKBOOK],res[y],hmver[1]&call=url[file:/product/main]"
+    image: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F50%2Fd1%2F50d178ad5673494ffca432d9ae826b975fe3de0c.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
   },
   {
     id: 4,
@@ -81,6 +81,6 @@ export const products = [
     offPrice: 200,
     discount: 13,
     size: [36, 38, 40, 42, 44],
-    image: "https://lp2.hm.com/hmgoepprod?set=source[/7a/21/7a2169e4ef506085d30a748d3f096eaaa1e14ef4.jpg],origin[dam],category[],type[LOOKBOOK],res[y],hmver[1]&call=url[file:/product/main]"
+    image: "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc7%2Ff2%2Fc7f2c5bd90985a8d5b545da5174a642d84ef2d16.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]"
   }
 ];

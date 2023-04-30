@@ -37,8 +37,8 @@ const SingleProduct = () => {
             <section className='single-product-information col-11 col-md-5 d-flex flex-column justify-content-evenly mx-lg-3 mx-md-2 mt-2'>
                 <h3>{singleProduct.name}</h3>
                 <div>
-                    <h5 className='text-secondary'><del>${singleProduct.price}</del></h5>
-                    <Typography variant='h5' color='primary'>${singleProduct.offPrice}</Typography>
+                    <h5 className='text-secondary'><del>{singleProduct.price}$</del></h5>
+                    <Typography variant='h5' color='primary'>{singleProduct.offPrice}$</Typography>
                 </div>
                 <p className='text-wrap text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labor
@@ -73,7 +73,7 @@ export default SingleProduct;
 export const QuantityControls = ({ singleProduct, decHandler, incHandler, singleProductInCart, removeHandler }) => {
     return <>
         <div className='single_products_controls_container col-12 col-md-12 d-flex justify-content-between align-items-center mb-1'>
-            <Typography variant='h4' color='secondary'>${singleProductInCart.offPrice * singleProductInCart.quantity}</Typography>
+            <Typography variant='h4' color='secondary'>{singleProductInCart.offPrice * singleProductInCart.quantity}$</Typography>
             <div className='single_product_controls_quantity d-flex col-8 col-md-8 justify-content-between align-items-center rounded border' style={{ height: '2.5em' }}>
                 {singleProductInCart.quantity > 1 ?
                     <button onClick={() => decHandler(singleProduct)} className='btn btn-sm h-100 mx-1 shadow-none'>

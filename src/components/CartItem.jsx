@@ -15,8 +15,8 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
                     <div className='cartItem-information col-12 col-md-6 d-flex flex-column flex-md-row justify-content-md-between align-items-center'>
                         <h5 className='cartItem-name col-12 col-md-9 col-lg-8 mx-1'>{item.name}</h5>
                         <div className='col-12 col-lg-4 d-flex flex-column my-1'>
-                            <Typography variant='h6'>${item.offPrice * item.quantity}</Typography>
-                            <Typography color='secondary' variant='p'>- ${item.discount} discount</Typography>
+                            <Typography variant='h6'>{item.offPrice * item.quantity}$</Typography>
+                            <Typography color='secondary' variant='p'>- {item.discount}$ discount</Typography>
                         </div>
                     </div>
                     <div className='cartItem_controls_container col-12 col-md-5 d-flex flex-row justify-content-between'>

@@ -75,15 +75,15 @@ const CartSummary = ({ total, cart }) => {
                 <Typography variant='h5'>Cart Summary</Typography>
                 <div className='total col-12 d-flex justify-content-between align-items-center mt-3 px-1 m-1'>
                     <Typography variant='h6'>original total:</Typography>
-                    <Typography variant='h6' sx={{ mr: 1 }}>${orgPrice}</Typography>
+                    <Typography variant='h6' sx={{ mr: 1 }}>{orgPrice}$</Typography>
                 </div>
                 <div className='discount col-12 d-flex justify-content-between align-items-center px-1 m-1'>
                     <Typography variant='h6'>discount totoal:</Typography>
-                    <Typography variant='h6' sx={{ mr: 1 }}>${orgPrice - total}</Typography>
+                    <Typography variant='h6' sx={{ mr: 1 }}>{orgPrice - total}$</Typography>
                 </div>
                 <div className='netPrice col-12 d-flex justify-content-between align-items-center px-1 m-1'>
                     <Typography variant='h6'>net price:</Typography>
-                    <Typography variant='h6' sx={{ mr: 1 }}>${total}</Typography>
+                    <Typography variant='h6' sx={{ mr: 1 }}>{total}$</Typography>
                 </div>
                 <Link to='/signup?redirect=checkout' style={{ textDecoration: 'none' }}>
                     <Button variant="outlined" color="secondary" id='checkout-btn' sx={{ width: 1 }} disableElevation={true}>Checkout</Button>

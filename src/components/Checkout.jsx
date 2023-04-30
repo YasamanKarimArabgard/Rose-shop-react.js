@@ -53,7 +53,7 @@ const Checkout = () => {
                     <Divider />
                     <div className="col-12 d-flex justify-content-between m-2">
                         <Typography>Order total :</Typography>
-                        <Typography sx={{ mr: 2 }}>${total}</Typography>
+                        <Typography sx={{ mr: 2 }}>{total}$</Typography>
                     </div>
                     <Divider />
                     <div className="col-12">
