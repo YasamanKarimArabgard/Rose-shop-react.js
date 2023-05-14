@@ -3,20 +3,11 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import HomePage from './Pages/HomePage';
-import Cart from './Pages/Cart/Cart';
 import CartProvider from "./context/CartProvider";
 import AuthProvider from "./context/AuthProvider";
 import ProductsProvider from "./context/ProductsProvider";
-import CheckoutPage from "./Pages/CheckoutPage";
-import SignupPage from "./Pages/SignupPage";
-import LoginPage from './Pages/LoginPage.jsx'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import ProductsPage from './Pages/ProductsPage.jsx'
-import NotFound from "./Pages/NotFoundPage";
-import ProfilePage from "./Pages/ProfilePage";
-import ProductPage from "./Pages/ProductPage";
-import AboutUsPage from "./Pages/AboutUsPage";
+import route from './Routes/routes'
 
 function App() {
 
@@ -38,16 +29,9 @@ function App() {
           <CartProvider>
             <ProductsProvider>
               <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/checkout' element={<CheckoutPage />} />
-                <Route path='/signup' element={<SignupPage />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/dresses' element={<ProductsPage />} />
-                <Route path='/dresses/:id' element={<ProductPage />} />
-                <Route path='/profile' element={<ProfilePage />} />
-                <Route path='/about-us' element={<AboutUsPage />} />
-                <Route path='/*' element={<NotFound />} />
+                {route.map(route => {
+                  return <Route path={route.path} element={route.element} />
+                })}
               </Routes>
             </ProductsProvider>
           </CartProvider>
