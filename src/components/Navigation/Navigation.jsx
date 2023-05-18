@@ -48,7 +48,7 @@ const Navigation = () => {
                     </IconButton>
                     <DrawerSide open={open} setOpen={setOpen} pages={pages} />
                     <Typography
-                        color='#FAF8F7'
+                        color='#84142D'
                         variant="h6"
                         noWrap
                         component="div"
@@ -69,7 +69,7 @@ const Navigation = () => {
                                 sx={{
                                     my: 2, color: '#FAF8F7', display: 'block',
                                     '&.active': {
-                                        color: '#db504e',
+                                        color: '#84142D',
                                     },
                                 }}
                                 to={page.onclick}
@@ -86,7 +86,7 @@ const Navigation = () => {
                             sx={{
                                 color: '#FAF8F7',
                                 '&.active': {
-                                    color: '#db504e'
+                                    color: '#84142D'
                                 }
                             }}
                             component={NavLink}
@@ -103,7 +103,7 @@ const Navigation = () => {
                             sx={{
                                 color: '#FAF8F7',
                                 '&.active': {
-                                    color: '#db504e'
+                                    color: '#84142D'
                                 }
                             }}
                             aria-label="account of current user"
@@ -115,7 +115,7 @@ const Navigation = () => {
                                 sx={{
                                     color: '#FAF8F7',
                                     '&.active': {
-                                        color: '#db504e'
+                                        color: '#84142D'
                                     }
                                 }}
                                 className='navlink-nav'

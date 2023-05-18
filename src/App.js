@@ -8,16 +8,17 @@ import AuthProvider from "./context/AuthProvider";
 import ProductsProvider from "./context/ProductsProvider";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import route from './Routes/routes'
+import { useState } from "react";
 
 function App() {
 
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#84a59d'
+        main: '#647E68'
       },
       secondary: {
-        main: '#db504e'
+        main: '#84142D'
       },
     },
   });
@@ -30,7 +31,7 @@ function App() {
             <ProductsProvider>
               <Routes>
                 {route.map(route => {
-                  return <Route path={route.path} element={route.element} />
+                  return <Route key={route.id} path={route.path} element={route.element} />
                 })}
               </Routes>
             </ProductsProvider>
