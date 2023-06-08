@@ -73,9 +73,9 @@ const Products = () => {
                         <SelectPrice products={filteredItems} setFilteredItems={setFilteredItems} />
                     </div>
                 </section>
-                <section className="product_list col-12 d-flex flex-wrap justify-content-start mb-2">
+                <section className="product_list col-12 d-flex flex-wrap justify-content-center mb-2">
                     {
-                        !products ?
+                        !filteredItems && loading ?
                             <ProductsLoading /> :
                             filteredItems.map(product => (
                                 <Product
