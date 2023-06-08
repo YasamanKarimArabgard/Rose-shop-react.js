@@ -86,7 +86,7 @@ const CartSummary = ({ total, cart }) => {
                     <Typography variant='h6' sx={{ mr: 1 }}>{total}$</Typography>
                 </div>
                 <Link to='/signup?redirect=checkout' style={{ textDecoration: 'none' }}>
-                    <Button variant="outlined" color="secondary" id='checkout-btn' sx={{ width: 1 }} disableElevation={true}>Checkout</Button>
+                    <Button variant="contained" id='checkout-btn' sx={{ width: 1 , color : '#fff'}} disableElevation={true}>Checkout</Button>
                 </Link>
             </div>
         </section>

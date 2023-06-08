@@ -15,10 +15,10 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#647E68'
+        main: '#420516'
       },
       secondary: {
-        main: '#84142D'
+        main: '#B42B51'
       },
     },
   });

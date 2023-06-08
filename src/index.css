@@ -86,8 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
   scroll-behavior: smooth;
-  scrollbar-color: #84a59d white;
--webkit-scrollbar-color: #84a59d white;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -107,7 +105,7 @@ section {
 
 body {
   line-height: 1;
-  
+  scroll-behavior: smooth;
 }
 
 ol,

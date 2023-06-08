@@ -43,7 +43,7 @@ const Checkout = () => {
                         <ul className="order-list list-group list-group-flush col-12 col-md-12 mb-2 mx-2">
                             {cart.map(item => (
                                 <li className="order_item list-group-item col-12 d-flex align-items-center justify-content-between" key={item.id}>
-                                    <p className="col-6 text-secondary">{item.name}</p>
+                                    <p className="col-6 text-secondary">{item.title}</p>
                                     <p className="col-2 text-secondary">✕{item.quantity}</p>
                                     <p className="col-3 text-secondary text-end">${item.quantity * item.price}</p>
                                 </li>
