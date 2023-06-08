@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProducts } from '../context/ProductsProvider';
+import { useProducts, useLoading } from '../context/ProductsProvider';
 import { IconButton } from "@mui/material";
 import { useCartActions, useCart } from "../context/CartProvider";
 import { ToastAlert } from "./ToastAlert";
@@ -9,21 +9,20 @@ import SelectPrice from './SelectPrice';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import Product from './Product';
+import ProductsLoading from '../components/Loading/ProductsLoading'
 
 const Products = () => {
 
     const products = useProducts();
+    const loading = useLoading();
     const { cart } = useCart();
-
-    console.log(products);
 
     const [open, setOpen] = useState(false);
     const [filteredItems, setFilteredItems] = useState([]);
-    // const [loading, setLoading] = useState(null);
-    
+
     const dispatch = useCartActions();
     const { category } = useParams();
-    
+
     useEffect(() => {
         const filterProducts = () => {
             if (!category) {
@@ -75,13 +74,17 @@ const Products = () => {
                     </div>
                 </section>
                 <section className="product_list col-12 d-flex flex-wrap justify-content-start mb-2">
-                    {filteredItems.map(product => (
-                        <Product
-                            product={product}
-                            addToCartHandler={addToCartHandler}
-                            cart={cart}
-                            key={product.id} />
-                    ))}
+                    {
+                        !products ?
+                            <ProductsLoading /> :
+                            filteredItems.map(product => (
+                                <Product
+                                    product={product}
+                                    addToCartHandler={addToCartHandler}
+                                    cart={cart}
+                                    key={product.id} />
+                            ))
+                    }
                     <ToastAlert open={open} handleClose={handleClose} products={products} />
                 </section>
             </main>
