@@ -24,11 +24,29 @@ const Navigation = () => {
         },
         {
             id: 2,
-            name: 'Dresses',
-            onclick: '/dresses'
+            name: 'All',
+            onclick: '/products'
         },
         {
             id: 3,
+            name: 'electronics',
+            onclick: '/products/electronics'
+        }, {
+            id: 4,
+            name: 'Jewelery',
+            onclick: '/products/jewelery'
+        }, {
+            id: 5,
+            name: "men's clothing",
+            onclick: "/products/men's clothing"
+        },
+        {
+            id: 6,
+            name: "women's clothing",
+            onclick: "/products/women's clothing"
+        },
+        {
+            id: 7,
             name: 'About us',
             onclick: '/about-us'
         },
@@ -48,7 +66,7 @@ const Navigation = () => {
                     </IconButton>
                     <DrawerSide open={open} setOpen={setOpen} pages={pages} />
                     <Typography
-                        color='#84142D'
+                        color='secondary'
                         variant="h6"
                         noWrap
                         component="div"
@@ -63,18 +81,15 @@ const Navigation = () => {
                             horizontal: 'left',
                         }}>
                         {pages.map((page) => (
-                            <Button
-                                component={NavLink}
+                            <Button to={page.onclick}
+                                key={page.id}
                                 className='navlink-nav'
                                 sx={{
-                                    my: 2, color: '#FAF8F7', display: 'block',
-                                    '&.active': {
-                                        color: '#84142D',
-                                    },
+                                    color: '#FAF8F7',
                                 }}
-                                to={page.onclick}
-                                key={page.id}>
-                                {page.name}</Button>
+                                style={{ textDecoration: 'none' }}
+                                component={NavLink}
+                            >{page.name}</Button>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />

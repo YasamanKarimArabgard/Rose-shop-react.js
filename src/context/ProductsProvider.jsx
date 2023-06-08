@@ -1,12 +1,34 @@
-import React, { createContext, useContext, useState } from 'react';
-import * as data from '../data';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import getProducts from '../services/getProducts';
 
 export const ProductsContext = createContext();
 
 const ProductsProvider = ({ children }) => {
 
-    const getProducts = data.products;
-    const [products] = useState(getProducts);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const { data } = await getProducts();
+                const upadtedProducts = data.map(product => ({
+                    ...product,
+                    offPrice: product.price - 5,
+                    discount: 20,
+                    supports: [
+                        { support: "best quality" },
+                        { support: "original" },
+                        { support: "free delivery" },
+                    ],
+                }))
+                setProducts(upadtedProducts);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getProduct();
+    }, [products])
+
 
     return (
         <>

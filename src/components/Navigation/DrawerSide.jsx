@@ -10,15 +10,15 @@ import { Divider, Typography } from '@mui/material';
 const DrawerSide = ({ open, setOpen, pages }) => {
     return (<>
             <SwipeableDrawer variant='temporary' hideBackdrop={false} open={open} onClose={() => setOpen(false)}>
-                <Typography sx={{ m: 2 }} color='secondary' variant='h6'>Rose Shop</Typography>
+                <Typography sx={{ m: 2 }} color='primary' variant='h6'>Rose Shop</Typography>
                 <Divider />
                 <List>
                     {pages.map(item => (
-                        <ListItem button
+                        <ListItem
                             sx={{
                                 color: 'black',
                                 '&.active': {
-                                    color: '#db504e'
+                                    color: '#B42B51'
                                 }
                             }}
                             to={item.onclick}

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useProducts } from '../context/ProductsProvider';
 import { IconButton } from "@mui/material";
 import { useCartActions, useCart } from "../context/CartProvider";
 import { ToastAlert } from "./ToastAlert";
 import Searchbar from './Searchbar';
-import { useProducts } from '../context/ProductsProvider';
 import SelectPrice from './SelectPrice';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -14,10 +15,28 @@ const Products = () => {
     const products = useProducts();
     const { cart } = useCart();
 
-    const [open, setOpen] = useState(false);
-    const [filteredItems, setFilteredItems] = useState(products);
+    console.log(products);
 
+    const [open, setOpen] = useState(false);
+    const [filteredItems, setFilteredItems] = useState([]);
+    // const [loading, setLoading] = useState(null);
+    
     const dispatch = useCartActions();
+    const { category } = useParams();
+    
+    useEffect(() => {
+        const filterProducts = () => {
+            if (!category) {
+                setFilteredItems(products);
+            } else {
+                const filteredProd = products.filter(product => {
+                    return product.category === category
+                })
+                setFilteredItems(filteredProd);
+            }
+        }
+        filterProducts();
+    }, [category]);
 
     const addToCartHandler = (e, product) => {
         e.stopPropagation();
@@ -41,7 +60,12 @@ const Products = () => {
                         <IconButton>
                             <SearchIcon />
                         </IconButton>
-                        <Searchbar products={products} setFilteredItems={setFilteredItems} />
+                        <Searchbar
+                            products={products}
+                            filteredItems={filteredItems}
+                            setFilteredItems={setFilteredItems}
+                            category={category}
+                        />
                     </div>
                     <div className='selectbar col-12 col-md-6 d-flex flex-nowrap justify-content-start align-items-center'>
                         <IconButton>
@@ -52,11 +76,16 @@ const Products = () => {
                 </section>
                 <section className="product_list col-12 d-flex flex-wrap justify-content-start mb-2">
                     {filteredItems.map(product => (
-                        <Product product={product} addToCartHandler={addToCartHandler} cart={cart} key={product.id} />
+                        <Product
+                            product={product}
+                            addToCartHandler={addToCartHandler}
+                            cart={cart}
+                            key={product.id} />
                     ))}
-                    <ToastAlert open={open} handleClose={handleClose} products={products}/>
+                    <ToastAlert open={open} handleClose={handleClose} products={products} />
                 </section>
             </main>
+
         </>
     );
 };

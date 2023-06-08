@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://fakestoreapi.com/products'
+axios.defaults.baseURL = 'https://fakestoreapi.com'
 
 const http = {
     get: axios.get,
