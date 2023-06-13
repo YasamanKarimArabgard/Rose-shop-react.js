@@ -2,12 +2,13 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import getProducts from '../services/getProducts';
 
 export const ProductsContext = createContext();
-export const LoadingContext = createContext();
+export const ErrorContext = createContext();
 
 const ProductsProvider = ({ children }) => {
 
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(null)
+    const [loading, setLoading] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getProduct = async () => {
@@ -27,7 +28,9 @@ const ProductsProvider = ({ children }) => {
                 setProducts(upadtedProducts);
                 setLoading(false)
             } catch (error) {
-                console.log(error);
+                if (error) {
+                    setError(true);
+                }
             }
         }
         getProduct();
@@ -36,16 +39,16 @@ const ProductsProvider = ({ children }) => {
 
     return (
         <>
-            <LoadingContext.Provider value={loading}>
+            <ErrorContext.Provider value={error}>
                 <ProductsContext.Provider value={products}>
                     {children}
                 </ProductsContext.Provider>
-            </LoadingContext.Provider>
+            </ErrorContext.Provider>
         </>
     );
 };
 
 export const useProducts = () => useContext(ProductsContext);
-export const useLoading = () => useContext(LoadingContext);
+export const useError = () => useContext(ErrorContext);
 
 export default ProductsProvider;

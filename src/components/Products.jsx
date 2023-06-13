@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useProducts, useLoading } from '../context/ProductsProvider';
+import { useProducts, useError } from '../context/ProductsProvider';
 import { IconButton } from "@mui/material";
 import { useCartActions, useCart } from "../context/CartProvider";
 import { ToastAlert } from "./ToastAlert";
@@ -14,8 +14,8 @@ import ProductsLoading from '../components/Loading/ProductsLoading'
 const Products = () => {
 
     const products = useProducts();
-    const loading = useLoading();
     const { cart } = useCart();
+    const error = useError();
 
     const [open, setOpen] = useState(false);
     const [filteredItems, setFilteredItems] = useState([]);
@@ -74,16 +74,19 @@ const Products = () => {
                     </div>
                 </section>
                 <section className="product_list col-12 d-flex flex-wrap justify-content-center mb-2">
+                {/* first check error then check categories */}
                     {
-                        !filteredItems && loading ?
-                            <ProductsLoading /> :
-                            filteredItems.map(product => (
-                                <Product
-                                    product={product}
-                                    addToCartHandler={addToCartHandler}
-                                    cart={cart}
-                                    key={product.id} />
-                            ))
+                        error ?
+                         <h3 className='text-danger mt-5'>The Server is not responding!</h3> :
+                            filteredItems.length === 0 ?
+                                <ProductsLoading /> :
+                                filteredItems.map(product => (
+                                    <Product
+                                        product={product}
+                                        addToCartHandler={addToCartHandler}
+                                        cart={cart}
+                                        key={product.id} />
+                                ))
                     }
                     <ToastAlert open={open} handleClose={handleClose} products={products} />
                 </section>
