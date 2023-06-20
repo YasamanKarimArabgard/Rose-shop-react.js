@@ -8,17 +8,16 @@ import AuthProvider from "./context/AuthProvider";
 import ProductsProvider from "./context/ProductsProvider";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import route from './Routes/routes'
-import { useState } from "react";
 
 function App() {
 
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#420516'
+        main: '#6b21a8'
       },
       secondary: {
-        main: '#B42B51'
+        main: '#e9d5ff'
       },
     },
   });

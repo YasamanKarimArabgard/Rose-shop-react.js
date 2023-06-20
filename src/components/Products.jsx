@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useProducts, useError } from '../context/ProductsProvider';
-import { IconButton } from "@mui/material";
 import { useCartActions, useCart } from "../context/CartProvider";
 import { ToastAlert } from "./ToastAlert";
 import Searchbar from './Searchbar';
 import SelectPrice from './SelectPrice';
-import SearchIcon from '@mui/icons-material/Search';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import Product from './Product';
-import ProductsLoading from '../components/Loading/ProductsLoading'
+import ProductsLoading from '../components/Loading/ProductsLoading';
+import HomeBanner from '../components/Home/HomeBanner';
 
 const Products = () => {
 
@@ -53,42 +51,40 @@ const Products = () => {
 
     return (
         <>
-            <main className="products_container col-11 d-flex flex-column align-items-center">
-                <section className='searchbar_container col-12 col-md-12 d-flex flex-wrap justify-content-between p-1 bg-white border rounded mt-2 mb-2'>
-                    <div className='searchbar col-12 col-md-6 d-flex flex-nowrap justify-content-start align-items-center'>
-                        <IconButton>
-                            <SearchIcon />
-                        </IconButton>
-                        <Searchbar
-                            products={products}
-                            filteredItems={filteredItems}
-                            setFilteredItems={setFilteredItems}
-                            category={category}
-                        />
-                    </div>
-                    <div className='selectbar col-12 col-md-6 d-flex flex-nowrap justify-content-start align-items-center'>
-                        <IconButton>
-                            <FilterListIcon />
-                        </IconButton>
-                        <SelectPrice products={filteredItems} setFilteredItems={setFilteredItems} />
-                    </div>
+            {/* check if category is false then show component */}
+            {!category ? <HomeBanner /> : ''}
+            <main className="products_container grid grid-cols-12 grid-rows-[55px-minmax(500px, _1fr)] gap-8 bg-purple-50">
+                <section className='searchbar_container col-span-10 row-start-3 col-start-2 flex items-center justify-between flex-wrap mt-3'>
+                    <Searchbar
+                        products={products}
+                        filteredItems={filteredItems}
+                        setFilteredItems={setFilteredItems}
+                        category={category}
+                    />
+                    <SelectPrice
+                        products={filteredItems}
+                        setFilteredItems={setFilteredItems}
+                    />
                 </section>
-                <section className="product_list col-12 d-flex flex-wrap justify-content-center mb-2">
-                {/* first check error then check categories */}
-                    {
-                        error ?
-                         <h3 className='text-danger mt-5'>The Server is not responding!</h3> :
-                            filteredItems.length === 0 ?
-                                <ProductsLoading /> :
-                                filteredItems.map(product => (
-                                    <Product
-                                        product={product}
-                                        addToCartHandler={addToCartHandler}
-                                        cart={cart}
-                                        key={product.id} />
-                                ))
-                    }
-                    <ToastAlert open={open} handleClose={handleClose} products={products} />
+                <section className="product_list col-span-10 row-start-4 col-start-2 flex">
+                    <section className='grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 md:p-0 sm:gap-x-4 md:gap-x-6 xl:gap-x-8 md:gap-y-3 mb-2'>
+
+                        {/* first check error then check categories */}
+                        {
+                            error ?
+                                <h3 className='text-danger mt-5'>The Server is not responding!</h3> :
+                                filteredItems.length === 0 ?
+                                    <ProductsLoading /> :
+                                    filteredItems.map(product => (
+                                        <Product
+                                            product={product}
+                                            addToCartHandler={addToCartHandler}
+                                            cart={cart}
+                                            key={product.id} />
+                                    ))
+                        }
+                        <ToastAlert open={open} handleClose={handleClose} products={products} />
+                    </section>
                 </section>
             </main>
 
