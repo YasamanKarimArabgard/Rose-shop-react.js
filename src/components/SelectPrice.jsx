@@ -43,14 +43,17 @@ const SelectPrice = ({ products, setFilteredItems }) => {
         filterPrices(e.value)
     }
 
-    return (<>
-            <Select
-            className='w-100'
-                options={options}
-                value={selectedPrices}
-                onChange={selectPriceHandler}
-                placeholder='Filter by price'>
-            </Select>
+    return (
+        <>
+            <div className='selectbar hidden md:w-1/4 xl:w-1/4 md:flex justify-end'>
+                <Select
+                    className='w-full xl:w-1/2'
+                    options={options}
+                    value={selectedPrices}
+                    onChange={selectPriceHandler}
+                    placeholder='Filter by price'>
+                </Select>
+            </div>
         </>
     );
 };
