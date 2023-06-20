@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from '../../context/AuthProvider';
 import DrawerSide from './DrawerSide';
-import { useCart } from '../../context/CartProvider';
+// import { useCart } from '../../context/CartProvider';
 
 
 const Naviagation = () => {
 
     const userData = useAuth();
-    const { cart } = useCart()
+    // const { cart } = useCart();
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     const pages = [
         {
@@ -52,19 +53,19 @@ const Naviagation = () => {
                         </svg>
                     </botton>
                     <DrawerSide open={open} setOpen={setOpen} pages={pages} />
-                    <h3 className="brand-title text-xl text-purple-900 font-bold">Rose shop</h3>
+                    <h3 className="brand-title text-xl text-purple-900 font-bold cursor-pointer" onClick={()=>navigate('/')}>Rose shop</h3>
                     <div className="pages-navbar hidden xl:flex justify-between">
                         <div className='flex-1'>
                             {pages.map((page) => (
                                 <NavLink to={page.onclick}>
-                                    <button key={page.id} className="mx-1 text-md text-purple-800 hover:bg-purple-200 p-2 rounded-xl">{page.name}</button>
+                                    <button key={page.id} className="mx-1 text-md text-purple-800 hover:bg-purple-100 p-2 rounded-xl">{page.name}</button>
                                 </NavLink>
                             ))}
                         </div>
                     </div>
                     <div className="notification-bar flex justify-between items-center">
                         <NavLink to={'/cart'} className='mr-2'>
-                            <span className="text-purple-800 hover:bg-purple-200 mx-2 text-md p-2 rounded-xl">
+                            <span className="text-purple-800 mx-2 text-md p-2 rounded-xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                                 </svg>
