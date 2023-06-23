@@ -53,8 +53,8 @@ const Products = () => {
         <>
             {/* check if category is false then show component */}
             {!category ? <HomeBanner /> : ''}
-            <main className="products_container grid grid-cols-12 grid-rows-[55px-minmax(500px, _1fr)] gap-8 bg-purple-50">
-                <section className='searchbar_container col-span-10 row-start-3 col-start-2 flex items-center justify-between flex-wrap mt-3'>
+            <main className="products_container grid grid-cols-12 md:grid-rows-[55px-minmax(500px, _1fr)] gap-8 max-w-screen-2xl bg-purple-50">
+                <section className='searchbar_container col-span-10 row-start-3 col-start-2 flex items-center justify-between flex-wrap md:mt-3'>
                     <Searchbar
                         products={products}
                         filteredItems={filteredItems}
