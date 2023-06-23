@@ -1,17 +1,12 @@
 const AboutUs = () => {
     return (
-        <main className="col-11 col-sm-11 col-md-10 d-flex justify-content-center">
-            <section className="col-12 d-flex flex-column bg-white border p-3 rounded mt-3 mt-md-0">
-                <h5>About us</h5>
-                <p className="text-wrap">
-                    Hi, everyone ,<br/>
-                    this is Yasaman Arabgard . I'm a 22 years old front-end developer with a curious mind in programming ;
-                    I'm interested in programming and coding since I did my first 'Hello World' at university.<br />
-                    I like to do challenges in my code cause I belive that it makes progress in my skills and then in my code!<br />
-                    I'd like to code individualy and team work both! but at the end in my mind no one can't failure a strong team.<br />
-                    after all programming helped me when I was feeling down in my life and now it's every thing to me ; I try to become better
-                    more and more every day.<br />
-                    hope you enjoy my project.
+        <main className="aboutus-container grid grid-cols-12 grid-rows-[55px-minmax(500px, _1fr)] gap-8">
+            <section className="col-span-10 col-start-2 row-start-4 bg-purple-100 p-5 rounded-md">
+                <h5 className="font-bold text-purple-800 mb-3">About us</h5>
+                <p className="text-gary-800 leading-snug text-justify">
+                    Hi, everyone ,<br />
+                    As a junior front end developer, I have gained more than a year of personal experience in the field and I am passionate about all things tech and programming. With a strong desire to continuously improve my skills and knowledge, I strive to stay up-to-date with the latest trends and advancements in the industry.
+                    I specialize in working with a range of technologies, including React.js, Material UI, Sass, Tailwind, Redux, JavaScript ES6, Bootstrap, and am familiar with TypeScript .<br/>My expertise in these areas has allowed me to develop innovative and user-friendly web applications that meet the needs of clients across various industries.
                 </p>
             </section>
         </main>
