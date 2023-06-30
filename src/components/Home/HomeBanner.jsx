@@ -15,8 +15,7 @@ const HomeBanner = () => {
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                     </p>
-                    <button className='btn bg-purple-400 text-white font-bold text-sm xl:text-md px-3 py-1 xl:py-2 rounded-xl xl:mt-3 hover:bg-purple-500 transition-all'
-                        onClick={() => navigate('/products')}>Let's buy now</button>
+                    <a href='#products' className='btn bg-purple-400 text-white font-bold text-sm xl:text-md px-3 py-1 xl:py-2 rounded-xl xl:mt-3 hover:bg-purple-500 transition-all'>Let's buy now</a>
                 </div>
                 <div className='w-4/5 md:w-1/2 col-span-6 flex justify-center xl:justify-end items-center'>
                     <img className='w-full md:w-3/4 h-auto' src={HomePageImg} alt='home-bg' />
