@@ -45,7 +45,7 @@ const SelectPrice = ({ products, setFilteredItems }) => {
 
     return (
         <>
-            <div className='selectbar hidden md:w-1/4 xl:w-1/4 md:flex justify-end'>
+            <div className='selectbar hidden md:w-1/4 xl:w-1/2 md:flex justify-end'>
                 <Select
                     className='w-full xl:w-1/2'
                     options={options}

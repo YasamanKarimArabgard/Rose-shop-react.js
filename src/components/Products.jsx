@@ -52,9 +52,9 @@ const Products = () => {
     return (
         <>
             {/* check if category is false then show component */}
-            {!category ? <HomeBanner /> : ''}
-            <main className="products_container grid grid-cols-12 md:grid-rows-[55px-minmax(500px, _1fr)] gap-8 max-w-screen-2xl bg-purple-50">
-                <section className='searchbar_container col-span-10 row-start-3 col-start-2 flex items-center justify-between flex-wrap md:mt-3'>
+            <main main className="products_container col-span-10 col-start-2 row-start-4 md:row-start-3 bg-purple-50 flex flex-col min-h-screen">
+                {!category ? <HomeBanner /> : ''}
+                <section className='searchbar_container flex items-center justify-between flex-wrap md:mb-3 mt-5'>
                     <Searchbar
                         products={products}
                         filteredItems={filteredItems}
@@ -66,8 +66,8 @@ const Products = () => {
                         setFilteredItems={setFilteredItems}
                     />
                 </section>
-                <section className="product_list col-span-10 row-start-4 col-start-2 flex">
-                    <section className='grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 md:p-0 sm:gap-x-4 md:gap-x-6 xl:gap-x-8 md:gap-y-3 mb-2'>
+                <section className="product_list col-start-2 flex">
+                    <section className='grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 md:p-0 sm:gap-x-4 md:gap-x-6 xl:gap-x-8 md:gap-y-3 mb-2 my-3'>
 
                         {/* first check error then check categories */}
                         {
@@ -87,7 +87,6 @@ const Products = () => {
                     </section>
                 </section>
             </main>
-
         </>
     );
 };
