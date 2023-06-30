@@ -14,10 +14,10 @@ const CartItem = ({ item, removeHandler, incHandler, decHandler }) => {
                 </div>
                 <div className='cartItem_information_container w-1/2 xl:w-3/4 flex flex-col xl:flex-row justify-evenly md:justify-between h-full'>
                     <div className='cartItem-information w-full xl:w-2/3 flex flex-col justify-around xl:flex-row md:items-start xl:items-center h-1/2 md:h-full'>
-                        <h5 className='cartItem-name w-full xl:w-3/5 text-sm md:text-md font-bold truncate mb-1'>{item.title}</h5>
+                        <h5 className='cartItem-name w-full xl:w-3/5 text-sm md:text-md font-bold truncate mb-1 text-slate-800'>{item.title}</h5>
                         <div className='flex items-center justify-start xl:justify-center w-full md:w-3/5'>
                             <div className='flex flex-col'>
-                                <span className='font-bold text-md md:text-lg text-black mb-1'>{totalItemPrice.toFixed(2)}$</span>
+                                <span className='font-bold text-md md:text-lg text-slate-800 mb-1'>{totalItemPrice.toFixed(2)}$</span>
                                 <span className='text-red-600 text-sm'>- {item.discount}$ discount</span>
                             </div>
                         </div>
