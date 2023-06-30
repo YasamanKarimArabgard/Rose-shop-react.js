@@ -8,7 +8,7 @@ import SelectPrice from './SelectPrice';
 import Product from './Product';
 import ProductsLoading from '../components/Loading/ProductsLoading';
 import HomeBanner from '../components/Home/HomeBanner';
-import emptyCartImg from '../assets/images/emptycart (2).png'
+import error from '../assets/images/error.png'
 
 const Products = () => {
 
@@ -101,7 +101,7 @@ const ServerError = () => {
     }
 
     return (
-        <section className='col-span-12 col-start-2 row-start-4 flex justify-center min-h-screen'>
+        <section className='col-span-12 justify-center min-h-screen'>
             <div className='flex justify-center items-start'>
                 <div className='flex flex-col-reverse items-center md:flex-row md:justify-center'>
                     <div className='flex flex-col justify-center items-center xl:w-2/5'>
@@ -109,7 +109,7 @@ const ServerError = () => {
                         <button className='btn w-2/3 p-1 md:w-32 text-sm md:py-2 border border-purple-500 text-purple-500 hover:bg-purple-100 rounded-xl' onClick={()=>refreshPage()}>Try again!</button>
                     </div>
                     <div className='w-2/3 md:w-1/2 xl:w-3/5 ml-3 flex justify-center'>
-                        <img className='w-full md:w-3/4 h-auto' src={emptyCartImg} />
+                        <img className='w-full md:w-3/4 h-auto' src={error} />
                     </div>
                 </div>
             </div>
