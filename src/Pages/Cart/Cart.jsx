@@ -53,7 +53,7 @@ const Cart = () => {
                     <h1 className='text-xl font-bold text-purple-500 my-2'>Your Cart</h1>
                 </div>
                 <section className='h-auto flex flex-col md:flex-row justify-between'>
-                    <section className='cart grid grid-cols-3 w-full bg-purple-100 p-3 rounded-lg gap-x-4 h-80'>
+                    <section className='cart grid grid-cols-3 w-full bg-purple-100 p-3 rounded-lg gap-x-4'>
                         <ul className="cart-item col-span-3 md:col-span-2 md:col-start-1 md:col-end-3">
                             {cart.map(item => (
                                 <CartItem item={item}
