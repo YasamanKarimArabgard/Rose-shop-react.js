@@ -34,16 +34,16 @@ const SigleProd = () => {
             </section>
             <section className='single-product-information fixed md:static bottom-0 left-0 right-0 bg-purple-100 md:bg-white md:w-1/2 xl:w-2/5 px-5 p-2 md:p-1 flex flex-col justify-between rounded-tr-3xl rounded-tl-3xl'>
                 <div className='flex items-center'>
-                    <span className='text-xs md:text-md font-thin text-black mb-2'>category /</span>
+                    <span className='text-xs md:text-md font-thin text-slate-800 mb-2'>category /</span>
                     <span className='text-xs md:text-md font-thin text-gray-400 mb-2 ml-1'>{singleProduct.category}</span>
                 </div>
-                <h4 className='md:text-xs xl:text-2xl font-bold text-black my-1'>{singleProduct.title}</h4>
+                <h4 className='md:text-xs xl:text-2xl font-bold text-slate-800 my-1'>{singleProduct.title}</h4>
                 <div className='flex items-center'>
                     <h5 className='md:text-md xl:text-xl line-through text-gray-500 mr-3'>{singleProduct.price}$</h5>
                     <div className='font-bold text-xl md:text-2xl text-purple-700'>{singleProduct.offPrice}$</div>
                 </div>
                 <div className='hidden md:flex flex-col justify-between mb-1'>
-                    <h6 className='font-bold text-sm xl:text-lg'>Description : </h6>
+                    <h6 className='font-bold text-sm xl:text-lg text-slate-800'>Description : </h6>
                     <p className='font-thin text-gray-500 mt-2 text-xs xl:text-lg text-justify'>{singleProduct.description}</p>
                 </div>
                 <div className='single_product-features mb-2'>
@@ -83,7 +83,7 @@ export const QuantityControls = ({ singleProduct, decHandler, incHandler, single
     const totalSingleProdPrice = singleProductInCart.offPrice * singleProductInCart.quantity;
     return <>
         <div className='single_products_controls_container w-full mx-auto flex justify-between items-center'>
-            <div className='text-lg md:text-xl text-purple-700 font-bold mr-2'>{totalSingleProdPrice.toFixed(2)}$</div>
+            <div className='text-lg md:text-2xl text-purple-700 font-bold mr-2'>{totalSingleProdPrice.toFixed(2)}$</div>
             <div className='single_product_controls_quantity bg-white md:bg-purple-200 shadow-sm rounded-md flex-1 mx-1 flex justify-around items-center' style={{ height: '2.5em' }}>
                 {singleProductInCart.quantity > 1 ?
                     <button onClick={() => decHandler(singleProduct)} className=''>

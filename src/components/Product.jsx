@@ -16,7 +16,7 @@ const Product = ({ product, addToCartHandler, cart }) => {
                     <div className='w-full flex flex-col md:flex-row items-start md:items-center'>
                         {/* product title */}
                         <span className='w-3/4 mb-2'>
-                            <h6 className='truncate text-black font-bold text-xs xl:text-md'>{product.title}</h6>
+                            <h6 className='truncate text-slate-800 font-bold text-xs xl:text-md'>{product.title}</h6>
                         </span>
                         <div className='w-1/4 flex justify-end items-center'>
                             {/* product rate */}
