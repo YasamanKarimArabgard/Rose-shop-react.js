@@ -34,7 +34,13 @@ const ProductsProvider = ({ children }) => {
             }
         }
         getProduct();
+
+        const intervalProducts = setInterval(getProduct, 5000);
+
+        return () => clearInterval(intervalProducts);
     }, [products])
+
+
 
 
     return (

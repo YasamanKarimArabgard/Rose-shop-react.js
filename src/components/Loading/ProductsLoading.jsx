@@ -1,26 +1,12 @@
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ProductsLoading = () => {
-
-    const array = new Array(6);
-    array.fill();
-
     return (
-        <SkeletonTheme baseColor='#ebebeb' height={300}>
-            {
-                array.map((el, index) => (
-                    <div className='d-flex flex-column m-3 col-12 col-sm-6 col-md-3' key={index}>
-                        <p>
-                            <Skeleton count={1} height={150} />
-                        </p>
-                        <p>
-                            <Skeleton count={5} height={10} />
-                        </p>
-                    </div>
-                ))
-            }
-        </SkeletonTheme>
-    );
+        <div className='col-span-10 row-start-7 flex justify-center items-center'>
+            <CircularProgress color='primary' size='3rem' />
+            <span className='ml-2 text-2xl font-bold text-purple-800'>Loading...</span>
+        </div>
+    )
 }
 
 export default ProductsLoading;

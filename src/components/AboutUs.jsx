@@ -1,20 +1,24 @@
 const AboutUs = () => {
     return (
-        <main className="col-11 col-sm-11 col-md-10 d-flex justify-content-center">
-            <section className="col-12 d-flex flex-column bg-white border p-3 rounded mt-3 mt-md-0">
-                <h5>About us</h5>
-                <p className="text-wrap">
-                    Hi, everyone ,<br/>
-                    this is Yasaman Arabgard . I'm a 22 years old front-end developer with a curious mind in programming ;
-                    I'm interested in programming and coding since I did my first 'Hello World' at university.<br />
-                    I like to do challenges in my code cause I belive that it makes progress in my skills and then in my code!<br />
-                    I'd like to code individualy and team work both! but at the end in my mind no one can't failure a strong team.<br />
-                    after all programming helped me when I was feeling down in my life and now it's every thing to me ; I try to become better
-                    more and more every day.<br />
-                    hope you enjoy my project.
+        <section className="about-us-container col-span-10 col-start-2 row-start-4 h-screen">
+            <div className="w-full bg-purple-100 rounded-md p-5">
+                <h5 className="font-bold text-purple-800 mb-3">About us</h5>
+                <p className="text-gary-800 leading-snug text-justify text-slate-800">
+                    Hi, everyone !<br />
+                    As a junior front end developer, I have gained more than a year of personal experience in the field and I am passionate about all things tech and programming. With a strong desire to continuously improve my skills and knowledge, I strive to stay up-to-date with the latest trends and advancements in the industry.
+                    I specialize in working with a range of technologies, including React.js, Material UI, Sass, Tailwind, Redux, JavaScript ES6, Bootstrap, and am familiar with TypeScript .<br />My expertise in these areas has allowed me to develop innovative and user-friendly web applications that meet the needs of clients across various industries.
                 </p>
-            </section>
-        </main>
+                <div className="flex items-center mt-3">
+                    <span className="font-bold text-purple-950">Contact :</span>
+                    <span className="mx-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-slate-800">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                    </span>
+                    <span>jasmine.arabgard@outlook.com</span>
+                </div>
+            </div>
+        </section>
     );
 };
 
