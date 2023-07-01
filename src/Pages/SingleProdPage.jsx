@@ -1,10 +1,10 @@
 import Layout from "../Layout/Layout";
-import SigleProd from "../components/SigleProd";
+import SingleProd from "../components/SingleProd";
 
 const SingleProdPage = () => {
     return (
         <Layout>
-            <SigleProd />
+            <SingleProd />
         </Layout>
     );
 };

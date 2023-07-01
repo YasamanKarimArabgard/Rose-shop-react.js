@@ -1,4 +1,4 @@
-import { IconButton, Typography } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 

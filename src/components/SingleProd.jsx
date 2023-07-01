@@ -1,19 +1,19 @@
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../context/ProductsProvider';
 import { useCartActions, useCart } from '../context/CartProvider';
-import { Button, Typography, IconButton } from '@mui/material';
+import { Button,IconButton } from '@mui/material';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { v4 as uuidv4 } from 'uuid';
 
-const SigleProd = () => {
+const SingleProd = () => {
 
     const { id } = useParams();
     const products = useProducts();
     const { cart } = useCart();
     const dispatch = useCartActions();
 
-    const singleProduct = products.find(p => p.id == id);
-    const singleProductInCart = cart.find(p => p.id == id);
+    const singleProduct = products.find(p => p.id === id);
+    const singleProductInCart = cart.find(p => p.id === id);
 
     const incHandler = (cartItem) => {
         dispatch({ type: 'Add_To_Cart', payload: cartItem })
@@ -75,7 +75,7 @@ const SigleProd = () => {
     );
 };
 
-export default SigleProd;
+export default SingleProd;
 
 
 export const QuantityControls = ({ singleProduct, decHandler, incHandler, singleProductInCart, removeHandler }) => {

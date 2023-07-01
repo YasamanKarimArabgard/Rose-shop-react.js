@@ -1,10 +1,6 @@
 import HomePageImg from '../../assets/images/homePage.png'
-import { useNavigate } from 'react-router-dom';
 
 const HomeBanner = () => {
-
-    const navigate = useNavigate();
-
     return (
         <div className='home-banner-container md:col-start-2 col-span-12 md:col-span-10 row-start-3 bg-purple-100 h-96 md:h-auto flex flex-col justify-center items-center rounded-md md:mt-2'>
             <div className='w-full md:w-3/4 flex flex-col-reverse items-center md:flex-row justify-between py-4 px-4 md:h-1/3'>
