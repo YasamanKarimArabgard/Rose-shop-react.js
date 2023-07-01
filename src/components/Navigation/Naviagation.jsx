@@ -37,8 +37,14 @@ const Naviagation = () => {
             name: "women's clothing",
             onclick: "/products/women's clothing"
         },
+       
         {
             id: 6,
+            name: userData ? 'Profile' : 'Account',
+            onclick: userData ? 'profile' : '/signup'
+        },
+        {
+            id: 7,
             name: 'About us',
             onclick: '/about-us'
         },
