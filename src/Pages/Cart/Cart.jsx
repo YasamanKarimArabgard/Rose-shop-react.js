@@ -48,9 +48,9 @@ const Cart = () => {
 
     return (
         <Layout>
-            <main className='col-span-10 col-start-2 row-start-4 min-h-screen'>
-                <div className='sticky top-12 xl:top-11 z-10 bg-blur backdrop-blur-sm bg-blur bg-cover flex items-center'>
-                    <h1 className='text-xl font-bold text-purple-500 my-2'>Your Cart</h1>
+            <main className='col-span-10 col-start-2 row-start-3 md:row-start-4 min-h-screen'>
+                <div className='sticky top-12 xl:top-11 z-10 bg-blur backdrop-blur-sm bg-blur bg-cover flex items-center ml-3'>
+                    <h1 className='text-2xl font-bold text-purple-500 my-2'>Your cart</h1>
                 </div>
                 <section className='h-auto flex flex-col md:flex-row justify-between'>
                     <section className='cart grid grid-cols-3 w-full bg-purple-100 p-3 rounded-lg gap-x-4'>
@@ -64,6 +64,7 @@ const Cart = () => {
                                 />
                             ))}
                         </ul>
+                        <div className='h-40 md:hidden bg-purple-100'></div>
                         <CartSummary total={total} cart={cart} />
                     </section>
                 </section>
