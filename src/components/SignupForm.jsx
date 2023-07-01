@@ -77,7 +77,7 @@ const Signup = () => {
     });
 
     return (
-        <main className='SignupForm col-span-10 col-start-2 row-start-4 md:row-start-5 min-h-screen max-w-screen-2xl'>
+        <main className='SignupForm col-span-10 col-start-2 row-start-4 min-h-screen max-w-screen-2xl'>
             <main className='SignupForm_container w-full bg-white h-fit flex justify-between rounded-lg shadow-xs p-1'>
                 <div className='siginup_info w-full md:w-2/3 flex flex-col justify-center items-center'>
                     <h5 className='signup-title text-2xl font-bold text-slate-800 my-2'>Signup Form</h5>

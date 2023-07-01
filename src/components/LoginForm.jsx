@@ -54,7 +54,7 @@ const Login = () => {
     });
 
     return (
-        <main className="loginForm col-span-10 col-start-2 row-start-4 md:row-start-5 min-h-screen">
+        <main className="loginForm col-span-10 col-start-2 row-start-4 min-h-screen">
             <main className="loginForm_container w-full bg-white rounded-md p-1 flex justify-between">
                 <div className="login_information w-full md:w-2/3 flex flex-col justify-center items-center">
                     <h5 className="login-title text-2xl font-bold text-slate-800 my-2">Login Form</h5>
