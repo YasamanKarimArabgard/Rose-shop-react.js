@@ -2,7 +2,7 @@ import Layout from '../../Layout/Layout';
 import CartItem from '../../components/CartItem';
 import { useCart, useCartActions } from '../../context/CartProvider';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Divider, Typography } from '@mui/material';
+import { Button} from '@mui/material';
 import emtyCartImg from '../../assets/images/error.png'
 const Cart = () => {
 
@@ -38,7 +38,7 @@ const Cart = () => {
                             <button className='btn w-2/3 p-1 md:w-32 text-sm md:py-3 border border-purple-500 text-purple-500 hover:bg-purple-100 rounded-xl' onClick={() => navigate('/')}>Back to shop</button>
                         </div>
                         <div className='w-2/3 md:w-1/2 xl:w-3/5 ml-3 flex justify-center'>
-                            <img className='w-full md:w-3/4 h-auto' src={emtyCartImg} />
+                            <img className='w-full md:w-3/4 h-auto' src={emtyCartImg} alt='error banner'/>
                         </div>
                     </div>
                 </div>
