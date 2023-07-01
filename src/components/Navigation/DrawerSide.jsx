@@ -18,8 +18,9 @@ const DrawerSide = ({ open, setOpen, pages }) => {
                             sx={{
                                 color: 'black',
                                 '&.active': {
-                                    color: '#B42B51'
-                                }
+                                    color: '#6b21a8',
+                                    fontWeight: 'bold',
+                                },
                             }}
                             to={item.onclick}
                             component={NavLink}
