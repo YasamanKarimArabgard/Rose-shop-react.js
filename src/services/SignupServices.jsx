@@ -1,5 +1,5 @@
-import http from "./httpServices";
+import instance from "../axiosInstance"
 
 export default function signupPost (data){
-    return http.post('/user/register', data)
+    return instance.post('/user/register', data)
 };
