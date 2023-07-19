@@ -1,5 +1,4 @@
 import Layout from '../Layout/Layout';
-import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const NotFoundPage = () => {
@@ -8,9 +7,11 @@ const NotFoundPage = () => {
 
     return (
         <Layout>
-            <div className='errorPage col-12 d-flex flex-column justify-content-center align-items-center mt-5'>
-                <h1 className='text-secondary mb-4'>404 Error!</h1>
-                <Button variant='text' color='secondary' onClick={()=>navigate('/')}>Back to home </Button>
+            <div className='errorPage col-span-10 col-start-2 row-start-2 min-h-screen max-w-screen-2xl flex justify-center items-center'>
+                <div>
+                    <h1 className='text-2xl text-red-600 font-bold mb-2'>404 Error!</h1>
+                    <button className='bg-purple-400 text-white rounded-xl p-2 px-3' onClick={() => navigate('/')}>Back to home</button>
+                </div>
             </div>
         </Layout>
     );
