@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../context/ProductsProvider';
 import { useCartActions, useCart } from '../context/CartProvider';
-import { Button,IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -31,11 +31,11 @@ const SingleProd = () => {
     }
 
     return (
-        <div className='single-product col-span-10 row-start-2 -mt-20 md:-mt-auto md:row-start-3 mb-2 mb 2xl:row-start-2 col-start-2 h-fit max-h-min flex flex-col md:flex-row xl:justify-betwee bg-white p-1 py-5 rounded-2xl md:rounded-md shadow-sm max-w-screen-2xl'>
-            <section className='single-product-image md:w-1/2 xl:w-2/5 flex justify-center items-center p-2 px-5'>
+        <div className='single-product col-span-10 row-start-2 md:row-start-3 mb-2 mb 2xl:row-start-2 col-start-2 h-fit max-h-min flex flex-col md:flex-col md:items-center xl:flex-row xl:justify-between md:bg-white p-1 py-5 rounded-2xl md:rounded-md shadow-sm max-w-screen-2xl'>
+            <section className='single-product-image md:w-1/2 xl:w-2/5 flex justify-center items-center p-3 py-5 md:p-2 px-5 md:mb-5 bg-white rounded-md'>
                 <img src={singleProduct.image} className='md:w-4/5 xl:w-2/5 h-auto' alt={singleProduct.title}></img>
             </section>
-            <section className='single-product-information fixed md:static bottom-0 left-0 right-0 bg-purple-100 md:bg-white md:w-1/2 xl:w-3/5 px-5 p-2 md:p-1 flex flex-col justify-between rounded-tr-3xl rounded-tl-3xl'>
+            <section className='single-product-information fixed md:static bottom-0 left-0 right-0 bg-purple-100 md:bg-white md:w-5/6 xl:w-3/5 xl:mr-2 px-5 p-2 md:p-1 flex flex-col justify-between rounded-tr-3xl rounded-tl-3xl'>
                 <div className='flex items-center'>
                     <span className='text-xs md:text-md font-thin text-slate-800 mb-2'>category /</span>
                     <span className='text-xs md:text-md font-thin text-gray-400 mb-2 ml-1'>{singleProduct.category}</span>
@@ -74,6 +74,7 @@ const SingleProd = () => {
                     }
                 </div>
             </section>
+            <div className='h-44 md:hidden'></div>
         </div>
     );
 };
