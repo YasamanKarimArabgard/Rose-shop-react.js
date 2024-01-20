@@ -23,6 +23,3 @@ Site .</br>
 ![cart-desk](https://github.com/YasamanKarimArabgard/Rose-shop-react.js/assets/76911812/a4435bf1-2513-4675-991c-fe471ead144c)
 ![cart-mobile](https://github.com/YasamanKarimArabgard/Rose-shop-react.js/assets/76911812/ada4def4-4200-48c6-868d-ec3a200bdcf8)
 ![single](https://github.com/YasamanKarimArabgard/Rose-shop-react.js/assets/76911812/47ad34d1-a5c6-4d95-9b3d-e20ef1e68404)
-
-
-hi
